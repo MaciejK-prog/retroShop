@@ -1,0 +1,26 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item size="8">
+            <div class="paymentContainer">
+                <h1 class="text">Address:</h1>
+                <lightning-input class="my-input" required="true" type="text" label="Name" data-id="name" onchange={handleInputChange}></lightning-input>
+                <lightning-input class="my-input" required="true" type="text" label="Surname" data-id="surname" onchange={handleInputChange}></lightning-input>
+                <lightning-input class="my-input" required="true" type="text" label="Country" data-id="country" onchange={handleInputChange}></lightning-input>
+                <lightning-input class="my-input" required="true" type="text" label="City" data-id="city" onchange={handleInputChange}></lightning-input>
+                <lightning-input class="my-input" required="true" type="text" label="Street" data-id="street" onchange={handleInputChange}></lightning-input>
+                <lightning-input class="my-input" required="true" type="text" label="Zip Code" data-id="zip" onchange={handleInputChange}></lightning-input>
+                <lightning-input class="my-input" required="true" type="text" label="Phone number" data-id="phone" onchange={handleInputChange}></lightning-input>
+            </br>
+                <h1 class="text">Select payment method :</h1>
+            </br>
+              
+            <c-svccp_radio-button-group></c-svccp_radio-button-group>
+            <button class="paymentButton" onclick={paymentSubmit}>Submit payment</button>
+                
+            </div>
+                
+        </lightning-layout-item>
+
+    </lightning-layout>
+    
+</template>

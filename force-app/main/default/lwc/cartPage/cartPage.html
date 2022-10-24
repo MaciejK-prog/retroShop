@@ -1,0 +1,53 @@
+<template>
+    <template if:true={showCart}>
+    <lightning-layout>
+        <lightning-layout-item size="8">
+    <h1 class="bigWriting">Your Cart :</h1>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th></th>
+                <th>Name</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={cart} for:item="item">
+                <tr key={item.id} data-id={item.id}>
+                    <td>{item.index}</td>
+                    <td><img class="cartPhoto" src={item.mainPhotoUrl}/></td>
+                    <td>{item.name}</td>
+                    <td>{item.discountString}</td>
+                    <td><button data-id={item.id} onclick={deleteProduct} class="deleteButton">Delete</button></td>
+                </tr>
+            </template>
+        </tbody>
+        </table>
+</lightning-layout-item>
+<lightning-layout-item if:true={totalPrice} size="4">
+    <div class="paymentWindow">
+    <div>
+        <h1 class="normalWriting">Overall Price :</h1>
+    </div>
+        <div>
+        <h1 class="normalWriting">{totalPrice}</h1>
+        </div>
+        <h1 class="normalWriting"> Enter code:</h1>
+        <div class="inputIcon">
+        <lightning-input type="text" onchange={discountCodeValueDetector}></lightning-input>
+        <lightning-icon if:false={isValid} icon-name="standard:first_non_empty"></lightning-icon>
+        <lightning-icon if:true={isValid} icon-name="standard:task2"></lightning-icon>
+        </div>
+        <button class="paymentButton" onclick={goToPayment}>Go to payment!</button>
+    </div>
+
+        </lightning-layout-item>
+        </lightning-layout>
+    </template>
+
+    <template if:true={showPayment}>
+        <c-billing-page-component onsubmit={saveOrder}></c-billing-page-component>
+    </template>
+</template>

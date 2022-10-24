@@ -1,0 +1,22 @@
+.navigation-item {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 70;
+    font-weight: 800;
+    margin-left: 20px;
+}
+
+.navigation-item:hover {
+    color: blueviolet;
+    font-weight: 1200;
+    transform:scale(1.4,1.5);
+    cursor: pointer;
+}
+
+.title {
+    visibility: var(--title-visibility);
+    opacity: var(--title-opacity);
+    transition: ease-in-out .6s;
+    margin-left: 1rem;
+}

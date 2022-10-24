@@ -1,0 +1,13 @@
+<template>
+    <div class="mainContainer">
+    <template for:each={phones} for:item="phone">
+        <div key={phone.id} data-id={phone.id} onclick={redirectToRecordPage} class="productDiv">
+            <img src={phone.mainPhotoUrl} onclick={redirectToRecordPage} class="displayedImage"/>
+            <h1 class="productName">{phone.name}</h1>
+            <h1 class="productPrice">{phone.priceString}</h1>
+            <h1 class="productPriceDiscounted">{phone.discountString}</h1>     
+    </div>
+</template>
+</div>
+    
+</template>

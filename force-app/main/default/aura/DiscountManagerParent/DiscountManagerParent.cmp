@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="DiscountManagerCalculatorController">
+    <aura:attribute name="selectedRowsList" type="Object[]"/>
+    <aura:handler name="informationPassEvent" event="c:PassInformationFromCalculatorToParentEvent" action="{!c.launchEntryInsert}"/>
+    <aura:handler name="discountToUpdateEvent" event="c:updateDiscountedPriceEvent" action="{!c.pushUpdatedDiscountPriceIntoTable}"/>
+    <lightning:layout >
+        <lightning:layoutItem size="8" padding="horizontal-small">
+            <c:DiscountManagerTable aura:id ="table" selectedRowsList = "{!v.selectedRowsList}"></c:DiscountManagerTable>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="4" padding="horizontal-small">
+            <c:DiscountManagerAura></c:DiscountManagerAura>
+        </lightning:layoutItem>  
+    </lightning:layout>
+
+
+</aura:component>	

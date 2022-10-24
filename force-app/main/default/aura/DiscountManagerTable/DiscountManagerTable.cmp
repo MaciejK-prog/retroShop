@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="DiscountManagerController">
+
+
+
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="selectedRowsCount" type="Integer" default="0"/>
+    <aura:attribute name="phraseToFind" type="String" default=""/>
+    <aura:attribute name="products" type="Object[]"/>
+    <aura:attribute name="selectedRowsList" type="Object[]"/>
+    <aura:attribute name="originalList" type="Object[]"/>
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    <aura:method name="handleResponse" action="{!c.handleResponse}">
+        <aura:attribute name="response" type="Object"/>
+    </aura:method>
+    <aura:method name="applyDiscount" action="{!c.applyDiscount}">
+        <aura:attribute name="response" type="Object"/>
+    </aura:method>
+    <!-- <aura:mehtod name="applyDiscount" action="{! c.applyDiscount }">
+        <aura:attribute name="response" type="Object"/>
+    </aura:mehtod> -->
+
+
+    <lightning:card>
+    <!-- the container element determine the height of the datatable -->
+    <lightning:input type="search" value="{!v.phraseToFind}" onchange="{!c.updateProductTable}"></lightning:input>
+<br/>
+
+    <div style="height: 100vh">
+        <lightning:datatable
+            columns="{! v.columns }"
+            data="{! v.products }"
+            keyField="id"
+            onrowselection="{! c.updateSelectedText }"/>
+    </div>
+</lightning:card>
+</aura:component>	

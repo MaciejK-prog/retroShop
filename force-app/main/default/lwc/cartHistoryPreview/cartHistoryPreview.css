@@ -1,0 +1,128 @@
+/* vietnamese */
+@font-face {
+    font-family: 'Bangers';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/bangers/v20/FeVQS0BTqb0h60ACH5FQ2Ixi.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Bangers';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/bangers/v20/FeVQS0BTqb0h60ACH5BQ2Ixi.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Bangers';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/bangers/v20/FeVQS0BTqb0h60ACH55Q2A.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: 'Bangers';
+    font-size: 30px;
+    min-width: 400px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.styled-table thead tr {
+    background-color:black;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    counter-increment: row-num;
+}
+
+.styled-table tbody tr td:first-child::before {
+    content: counter(row-num) ". ";
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid black;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.normalWriting {
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+    color: black;
+
+}
+
+.bigWriting {
+    font-family: 'Bangers', cursive;
+    font-size: 60px;
+    color: black;
+}
+
+.cartPhoto {
+    width : 100px;
+    height: 100px;
+}
+
+.paymentWindow {
+    display: flex;
+    justify-content: flex-start;
+    margin: 1rem;
+    padding: 1rem;
+    height: 30vh;
+    background-color: white;
+    border: 1px grey outset;
+    min-width: 260px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    margin-top: 115px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+.complainButton {
+    margin-left: 32px;
+    background-color: yellow;
+}
+
+.complainButton2 {
+    background-color: yellow;
+}
+
+
+.slds-button_brand {
+    --lwc-colorTextBrandPrimary: white;
+}
+
+.slds-modal {
+    font-family: 'Bangers', cursive;
+}
+
+.slds-text-heading_medium {
+    font-family: 'Bangers', cursive;
+}
+
+.caseDefinition {
+    text-align: center;
+    font-size:20px;
+    font-family: 'Bangers', cursive;
+}

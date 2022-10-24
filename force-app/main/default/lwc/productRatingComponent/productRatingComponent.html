@@ -1,0 +1,17 @@
+<template>
+    <div class="addCommentSection">
+        <c-e-s_-star-rating onratingchange={onStarRatingClick} rating={userRating}></c-e-s_-star-rating>
+        <lightning-textarea max-length="500" name="input1" label="Commentary field" value={userComment}></lightning-textarea>
+        <lightning-button if:false={userComment} class="saveCommentButton" label="save" onclick={saveComment}></lightning-button>
+    
+        <div class="editSection" if:true={userComment}>
+            <lightning-button class="saveCommentButton" label="Edit" onclick={saveComment}></lightning-button>
+            <lightning-button class="saveCommentButton" label="Delete" onclick={getDeleteEvent}></lightning-button>
+        </div>
+    </div>
+
+    <template for:each={commentaryList} for:item='com'>
+        <c-commentary-print-comment key={com.id} oneventafterdelete={getDeleteEvent} single-comment={com}></c-commentary-print-comment>
+    </template>
+    
+</template>
