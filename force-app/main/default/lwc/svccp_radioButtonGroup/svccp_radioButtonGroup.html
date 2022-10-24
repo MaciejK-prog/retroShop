@@ -1,0 +1,18 @@
+<template>
+    <fieldset class="cp-form-element" onchange={handleChange}>
+        <div class="cp-form-element-control">
+            <div class="cp-radio-button-group">
+                <template iterator:it={buttons}>
+                    <span key={it.value.name} class="cp-radio-button">
+                        <input type="radio" name="cp-radio" id={it.value.name} value={it.value.name} checked={it.first}/>
+                        <label class="cp-radio-button-label" for={it.value.name}>
+                            <span class="cp-radio-button-faux">{it.value.label}</span>
+                            
+                        </label>
+                             <img src={imageId} />
+                    </span>
+                </template>
+            </div>
+        </div>
+    </fieldset>
+</template>

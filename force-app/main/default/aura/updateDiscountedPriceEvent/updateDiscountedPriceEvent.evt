@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Event template">
+    <aura:attribute name="discount" type="Double" />
+    <aura:attribute name="discountType" Type="String"/>
+</aura:event>

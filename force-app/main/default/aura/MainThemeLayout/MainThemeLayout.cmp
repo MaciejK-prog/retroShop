@@ -1,0 +1,18 @@
+<aura:component implements="forceCommunity:themeLayout" access="global">
+    <aura:attribute name="search" type="Aura.Component[]"/>
+    <aura:attribute name="profileMenu" type="Aura.Component[]"/>
+    <aura:attribute name="navBar" type="Aura.Component[]"/>
+
+    <header class="header">
+        <div class="logo" onclick="{!c.returnToHomePage}">
+            <img src="{!$Resource.retroLogo}"/>
+        </div>
+        <div class="search">{!v.search}</div>
+        <br/>
+        <div class="profile">{!v.profileMenu}</div>
+          <c:navigation class="nav"></c:navigation>
+    </header>
+    <section class="content">
+        {!v.body}
+    </section>
+</aura:component>

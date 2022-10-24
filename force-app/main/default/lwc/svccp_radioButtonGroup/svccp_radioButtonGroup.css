@@ -1,0 +1,66 @@
+.cp-form-element {
+    position: relative;
+    min-width: 0;
+    margin-bottom: 1rem;
+    margin-left:130px;
+}
+
+.cp-form-element-control {
+    clear: left;
+    position: relative;
+}
+
+.cp-radio-button-group {
+    display: inline-flex;
+}
+
+.cp-radio-button {
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--dxp-s-body-font-size);
+    font-weight: var(--dxp-s-body-font-weight);
+    text-transform: var(--dxp-c-title-caps-text-transform);
+    line-height: var(--dxp-s-body-line-height);
+    letter-spacing: var(--dxp-s-body-letter-spacing);
+    color: #000000;
+}
+
+.cp-radio-button + .cp-radio-button {
+    margin-left: 2rem;
+}
+
+.cp-radio-button [type=radio] {
+
+    height: 30px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.cp-radio-button [type=radio]:checked + .cp-radio-button-label {
+    background-color: #FF671F;
+    border-color: #FF671F;
+    color: #ffffff;
+
+}
+
+.cp-radio-button .cp-radio-button-label {
+    background-color: #EDEEF3;
+    padding: 0.5rem;
+    border: 1px solid #CBCBCB;
+    border-radius: 0.75rem;
+    width: 100px;
+}
+
+.cp-radio-button .cp-radio-button-faux {
+    text-align: center;
+    vertical-align: middle;
+}

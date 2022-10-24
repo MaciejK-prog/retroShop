@@ -1,0 +1,17 @@
+.menuContainer {
+    color:blueviolet;
+    background-color: blueviolet;
+    height: 100vh;
+}
+
+.image {
+    display: block;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}
+
+.image :hover {
+    border-color: white;
+    border-radius: 2px;
+}

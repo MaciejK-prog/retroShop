@@ -1,0 +1,45 @@
+.THIS .photoClass {
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right:10px;
+    margin-bottom: 10px;
+}
+
+.THIS .buttonSection {
+    padding-left: 30px;
+}
+
+.THIS .photoCard {
+    display: inline-block;
+
+}
+
+.THIS .lightningCard {
+    height: 345px;
+    margin-left: 10px;
+    overflow: scroll;
+}
+
+.THIS .mainPhotoClass {
+
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right:10px;
+    margin-bottom: 10px;
+
+}
+
+.THIS .mainPhotoLabel {
+    
+    font-size:large;
+    font-weight: 800;
+}
+
+.THIS .mainPhotoCard {
+    padding-left: 30px;
+}
+

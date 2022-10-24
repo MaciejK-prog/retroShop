@@ -1,0 +1,56 @@
+<aura:component access="global" implements="flexipage:availableForAllPageTypes, lightning:availableForFlowScreens, lightning:availableForFlowActions, force:hasRecordId" controller="PhotoUploader">
+    
+    <aura:attribute name="filetype" type="List" default="['.png', '.jpg', '.jpeg']" />
+    <aura:attribute name="multiple" type="Boolean" default="true" />
+    <aura:attribute name="disabled" type="Boolean" default="true" />
+    <aura:attribute name="reRenderLayout" type="Boolean" default="true" />
+    <aura:attribute name="recordId" type="String" access="public" />
+    <aura:attribute name="idsOfPhotos" type="String[]" />
+    <aura:attribute name="basicUrl" type="String" default="/sfc/servlet.shepherd/version/download/" />
+    <aura:attribute name="idOfMainPhoto" type="String" />
+    <aura:attribute name="validate" type="Aura.Action" 
+                    description="Custom validation function to run when the flow is navigated to the next screen. The function must evaluate the component and return values for isValid and errorMessage."/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+  
+
+    <lightning:layout>
+
+
+        <aura:if isTrue = "{!v.reRenderLayout}">
+            <aura:set attribute="else">
+            <div class="backgroundInverse">
+                <lightning:spinner alternativeText="Loading" variant="inverse" />
+            </div>
+            </aura:set>
+    <lightning:layoutItem size="2">
+    <lightning:card class="mainPhotoCard">
+    <lightning:fileUpload class="inputFile" label="Add Photos Of Product"
+        name="fileUploader"
+        multiple="true"
+        accept="{!v.filetype}"
+        recordId="{!v.recordId}"
+        onuploadfinished="{!c.handleUploadFinished}" />
+        <h1 class="mainPhotoLabel">Main photo:</h1>
+        <img class="mainPhotoClass"  src= "{!v.basicUrl + v.idOfMainPhoto}" />
+    </lightning:card>
+</lightning:layoutItem>
+
+<lightning:layoutItem size="10" >
+    <lightning:card class="lightningCard">
+        <aura:iteration items="{!v.idsOfPhotos}" var="photoId">
+            <div class="photoCard">
+                <div>
+            <img class="photoClass" src= "{!v.basicUrl + photoId}"/>
+            <div class="buttonSection">
+            <lightning:button name="{!photoId}" variant="brand" label="Set as Main" title="Brand action" onclick="{! c.selectPhotoAsMain }" />
+            <lightning:button  name="{!photoId}" variant="destructive" label="Delete" onclick="{! c.handleClick }"/>
+        </div>
+        </div>
+        </div>
+        </aura:iteration>
+    </lightning:card>
+</lightning:layoutItem>
+</aura:if>
+</lightning:layout>
+</aura:component>

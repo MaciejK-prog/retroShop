@@ -1,0 +1,11 @@
+<template>
+        <div if:true={product} class="productDiv">
+            <img  class="displayedImage" src={product.mainPhotoUrl}/>
+            <div>
+                <template for:each={photos} for:item="pht">
+                    <img class="previewImage" data-id={pht.ContentDocument.LatestPublishedVersionId} key={pht.ContentDocument.LatestPublishedVersionId} src={pht.otherPhotosUrl} onclick={switchPhotos}/>
+                </template>
+            </div>
+        </div>
+
+</template>

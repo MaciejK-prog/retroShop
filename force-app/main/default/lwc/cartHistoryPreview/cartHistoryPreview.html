@@ -1,0 +1,100 @@
+<template>
+    <lightning-layout if:true={order.data}>
+
+        <template if:true={isModalOpen}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <!--<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button> -->
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Complain:</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <lightning-input name ="subject" label="Subject :" type="text" value={subjectOfComplain} onchange={handleSubjectChange}></lightning-input>
+                        <lightning-input name="reason" label="Description :" type="text" value={descriptionOfComplain} onchange={handleReasonChange}></lightning-input>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                        <button class="slds-button slds-button_brand" onclick={submitDetails} title="OK">OK</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <template if:true={is2ndModalOpen}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                       <!-- <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>-->
+                        <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Complain:</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                        <h1 class="caseDefinition">Subject:</h1>
+                        <h1 class="caseDefinition">{subjectToDisplay}</h1>
+                        <h1 class="caseDefinition">Reason:</h1>
+                        <h1 class="caseDefinition">{reasonToDisplay}</h1>
+                        <h1 class="caseDefinition">Status:</h1>
+                        <h1 class="caseDefinition">{statusToDisplay}</h1>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={close2ndModal} title="Cancel">Close</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <lightning-layout-item size="8">
+    <h1 class="bigWriting">Your Purchase Submit: </h1>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={order.OrderItems} for:item="orderItem">
+                <tr key={orderItem.Id} data-id={orderItem.Id}>
+
+                    <td>{orderItem.Product2.Name}</td>
+                    <td><img class="cartPhoto" src={orderItem.mainPhotoUrl}/></td> 
+                    <template if:false={orderItem.complained}>
+                    <td><button data-key={orderItem.Id} data-id={orderItem.Product2.Id} onclick={openModal} class="complainButton">Complains</button></td>
+                    </template>
+                    <template if:true={orderItem.complained}>
+                        <td><button data-key={orderItem.CaseId} data-id={orderItem.Product2.Id} onclick={open2ndModal} class="complainButton2">Complain Status</button></td>
+                    </template>
+                </tr>
+            </template> 
+        </tbody>
+        </table>
+</lightning-layout-item>
+ <lightning-layout-item size="4">
+  <div class="paymentWindow">
+    <div>
+         <h1 class="normalWriting">Order number :</h1> 
+        <h1 class="normalWriting">000{order.data.OrderNumber}</h1> 
+    </div>
+        <br/>
+        <div>
+            <h1 class="normalWriting">Order date :</h1>
+            <h1 class="normalWriting">{order.data.EffectiveDate}</h1> 
+        </div>
+    </div>
+
+        </lightning-layout-item> 
+</lightning-layout>
+    
+</template>

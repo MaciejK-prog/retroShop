@@ -1,0 +1,49 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="DiscountManagerCalculatorController">
+
+
+    <aura:attribute name="options" type="List" default="[
+    {'label': '(%)', 'value': 'precentage'},
+    {'label': 'PLN', 'value': 'currency'}
+    ]"/>
+    <aura:attribute name="value" type="String" default="precentage"/>
+    <aura:attribute name="discountAmount" type="Double"/>
+    <aura:attribute name="pricebookTypes" type="String" />
+    <aura:attribute name="isPrecentVisible" type="Boolean" default="true" />
+    <aura:attribute name="endDateTime" type="Datetime" description="The current user time"/>
+    <aura:attribute name="startDateTime" type="Datetime" description="The current user time"/>
+    <aura:attribute name="pricebooks" type="Object[]" />
+    <aura:handler name="change" value="{!v.value}" action="{!c.checkboxHandler}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="informationPassEvent" type="c:PassInformationFromCalculatorToParentEvent"/>
+    <aura:registerEvent name="discountToUpdateEvent" type="c:updateDiscountedPriceEvent"/>
+
+    
+    <lightning:card title="Set Your price">
+        <div class="card">
+        <aura:if isTrue="{!v.isPrecentVisible}">
+            <lightning:input type="range" label="{!v.discountAmount +' %'}" name="number" value="{! v.discountAmount}" min="0" max="100" onchange="{!c.sendDiscountValue}" />
+        <aura:set attribute="else">
+            <lightning:input type="number" required="true" step="0.01" value="{! v.discountAmount}" label="{!$Label.c.Set_Your_Discount}" onchange="{!c.sendDiscountValue}"/>
+        </aura:set>
+        </aura:if>
+        <lightning:radioGroup name="Checkbox Group"
+        label="Discount value"
+        options="{! v.options }"
+        value="{! v.value }"
+        type="radio"
+        onchange="{!c.handleDiscountChange}"
+        required="true"
+        />
+        <lightning:select name="select1" value="{!v.pricebookTypes}" label="{!$Label.c.Choose_Pricebook}" required="true">
+        <aura:iteration items="{!v.pricebooks}" var="pricebook" >
+            <option value="{!pricebook.Name}" >{!pricebook.Name}</option>
+        </aura:iteration>
+        </lightning:select>
+        <lightning:input value="{!v.startDateTime}" type="datetime" name="start-date" required="true" onchange="{!c.endDateUpdated}" label="Enter Sale start date/time" aura:id="start-date"/>
+        <lightning:input value="{!v.endDateTime}" type="datetime" name="end-date" required="true" onchange="{!c.endDateUpdated}" label="Enter Sale end date/time" aura:id="end-date"/>
+        <br/>
+        <lightning:button variant="brand" label="{!$Label.c.Set_Your_Discount}" onclick="{!c.sendDataHandler}" />
+    </div>
+    </lightning:card>
+
+</aura:component>	

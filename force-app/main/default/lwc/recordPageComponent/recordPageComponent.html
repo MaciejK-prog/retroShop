@@ -1,0 +1,17 @@
+<template>
+    <lightning-layout >
+        <lightning-layout-item size="5">
+            <c-record-page-product-view product-id = {productId}></c-record-page-product-view>
+        </lightning-layout-item>
+        <lightning-layout-item  size="6">
+            <c-product-description-component product-id = {productId}></c-product-description-component>
+        </lightning-layout-item>
+
+    </lightning-layout>
+    <lightning-layout>
+        <lightning-layout-item size="11">
+            <c-product-rating-component product-id = {productId}></c-product-rating-component>
+        </lightning-layout-item>
+    </lightning-layout>
+    
+</template>
