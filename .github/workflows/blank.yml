@@ -35,4 +35,4 @@ jobs:
       run: sfdx auth:sfdxurl:store -f ./SFDX_URL.txt -s -a production
       
     - name: 'Run deploy'
-      run: sfdx force:source:deploy -x manifest/package.xml --testlevel RunLocalTests --json
+      run: sfdx force:source:deploy -x manifest/package.xml --checkonly --testlevel RunLocalTests --json
