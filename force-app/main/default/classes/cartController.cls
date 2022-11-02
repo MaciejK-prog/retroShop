@@ -4,7 +4,7 @@ public with sharing class cartController {
     public static List<ProductService.Product> getProducts(List<String> productIds) {
 
         
-        List<PricebookEntry> productsEntries = [SELECT Id, UnitPrice, Product2Id, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
+        List<PricebookEntry> productsEntries = [SELECT Id, UnitPrice, CurrencyIsoCode, Product2Id, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
                                         FROM PricebookEntry
                                         WHERE Product2.Id IN :productIds AND Pricebook2.IsStandard = TRUE];
         List<ProductService.Product> productsInCart = new List<ProductService.Product>();

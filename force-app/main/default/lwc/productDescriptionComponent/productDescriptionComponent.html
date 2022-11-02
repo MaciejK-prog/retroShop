@@ -20,7 +20,9 @@
         <div if:true={isThereAnAuction}>
         <h1 class="productName">{product.name}</h1>
         <h1 class="productPrice">{product.updatedPrice}</h1>
-        <lightning-input type="number" onchange={handleAuctionPriceChange}></lightning-input>
+        <div class="slds-form-element__control">
+            <input type="number" onchange={handleAuctionPriceChange} class="slds-input" />
+          </div>
         <button class="slds-button slds-button_neutral buyButton" onclick={placeYourBid}>Bid!</button>
         <lightning-formatted-rich-text
         value={richtext}

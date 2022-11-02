@@ -18,6 +18,8 @@ export default class HomePageDisplayProducts extends NavigationMixin(LightningEl
     connectedCallback() {
         searchHotDealsProducts()
         .then(result => {
+
+            console.log(result);
             this.handleHotDealsResponse(result);
         })
         .catch(error => {
@@ -37,15 +39,15 @@ export default class HomePageDisplayProducts extends NavigationMixin(LightningEl
 
     handleHotDealsResponse(result) {
 
-        let addedCurrency = " PLN";
+
         this.products = JSON.parse(JSON.stringify(result));
         this.products.forEach((product) => {
  
             product.mainPhotoUrl = this.standardImageUrl + product.image;
 
-            product.discountString = product.discountedPrice + addedCurrency ;
+            product.discountString = product.discountedPrice + ' ' + product.providedCurrency ;
 
-            product.priceString = product.price + addedCurrency;
+            product.priceString = product.price + ' ' + product.providedCurrency;
             
         })
 
@@ -54,14 +56,12 @@ export default class HomePageDisplayProducts extends NavigationMixin(LightningEl
 
     handleSalesResponse(result) {
         this.sales = JSON.parse(JSON.stringify(result));
-        let addedCurrency = " PLN";
     
         this.sales.forEach((sale) => {
  
             sale.mainPhotoUrl = this.standardImageUrl + sale.image;
-            sale.discountString = sale.discountedPrice + addedCurrency ;
-
-            sale.priceString = sale.price + addedCurrency;
+            sale.discountString = sale.discountedPrice + ' ' + sale.providedCurrency ;
+            sale.priceString = sale.price + ' ' + sale.providedCurrency;
 
         })
 ;

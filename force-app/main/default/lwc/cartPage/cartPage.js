@@ -42,7 +42,7 @@ export default class CartPage extends NavigationMixin(LightningElement)  {
             this.calculateTotalPrice();
             this.cart.forEach((item) => {
                 item.mainPhotoUrl = this.standardImageUrl + item.image;
-                item.discountString = item.price + this.addedCurrency ;
+                item.discountString = item.price + ' ' + item.providedCurrency ;
             });
             
         })
@@ -74,7 +74,7 @@ export default class CartPage extends NavigationMixin(LightningElement)  {
         
         this.totalPriceWithoutCurrency = totalPrice;
 
-        this.totalPrice = totalPrice + this.addedCurrency;
+        this.totalPrice = totalPrice + ' EUR';
 
        // totalCustomPrice = totalCustomPrice;
        // totalQuantity = totalQuantity;

@@ -29,7 +29,8 @@ public with sharing class DiscountManagerController {
         }
     }
 
-    private static Map<Id, PricebookEntry> getStandardPricebookEntriesByProductsIds() {
+    @AuraEnabled
+    public static Map<Id, PricebookEntry> getStandardPricebookEntriesByProductsIds() {
         List<PricebookEntry> allPricebookEntries = [SELECT Pricebook2Id, Product2Id, ProductCode, UseStandardPrice, UnitPrice
                                              FROM PricebookEntry WHERE Pricebook2.IsStandard = true AND isActive = true];
 

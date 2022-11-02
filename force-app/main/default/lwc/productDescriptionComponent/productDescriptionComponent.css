@@ -279,3 +279,24 @@
 .rating .star-container .value-empty svg.star-empty {
     opacity: 1;
 }
+
+
+
+.slds-input {
+    padding-top: 0;
+    padding-right: var(--slds-c-input-spacing-horizontal-end, var(--sds-c-input-spacing-horizontal-end, var(--lwc-spacingMedium,1rem)));
+    padding-bottom: 0;
+    padding-left: var(--slds-c-input-spacing-horizontal-start, var(--sds-c-input-spacing-horizontal-start, var(--lwc-spacingSmall,0.75rem)));
+    width: 60%;
+    height: 60px;
+    margin-left: 115px;
+    font-size: 30px;
+    font-family: Bangers;
+    border: var(--lwc-borderWidthThin,1px) solid var(--slds-c-input-color-border, var(--sds-c-input-color-border, var(--lwc-colorBorderInput,rgb(14, 13, 14))));
+    border-radius: var(--slds-c-input-radius-border, var(--sds-c-input-radius-border, var(--lwc-borderRadiusMedium,0.25rem)));
+    background-color: var(--slds-c-input-color-background, var(--sds-c-input-color-background, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))));
+    color: var(--slds-c-input-text-color, var(--sds-c-input-text-color));
+    box-shadow: var(--slds-c-input-shadow, var(--sds-c-input-shadow));
+    transition: border var(--lwc-durationQuickly,0.1s) linear,background-color var(--lwc-durationQuickly,0.1s) linear;
+    display: inline-block;
+}

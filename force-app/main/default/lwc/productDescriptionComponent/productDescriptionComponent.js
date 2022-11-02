@@ -31,7 +31,9 @@ export default class ProductDescriptionComponent extends LightningElement {
         .then(result => {
            this.product = JSON.parse(JSON.stringify(result));
 
-            this.product.updatedPrice = this.product.price + pln;
+           console.log(this.product.providedCurrency);
+
+            this.product.updatedPrice = this.product.price + ' ' + this.product.providedCurrency;
             this.product.mainPhotoUrl = this.standardImageUrl + this.product.image
 
            
@@ -47,15 +49,9 @@ export default class ProductDescriptionComponent extends LightningElement {
 
                 if(result.length > 0) {
 
-                    console.log('1szy if');
-                    console.log( JSON.parse(JSON.stringify(result)));
                     this.auctionPrice = result[0].Start_Price__c;
 
-                    console.log(this.userId);
-                    console.log(result[0].UserId__c);
-
                     this.auctionPriceToDisplay = result[0].Start_Price__c + ' pln' ;
-                    console.log(this.auctionPriceToDisplay);
 
                     if(result[0].Status__c === true) {
                         this.isThereAnAuction = true;

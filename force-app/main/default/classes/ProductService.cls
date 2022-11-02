@@ -17,6 +17,8 @@ public with sharing class ProductService {
         public String image;
         @AuraEnabled
         public String description;
+        @AuraEnabled
+        public String providedCurrency;
 
         @AuraEnabled
         public Id pricebookEntryId;
@@ -31,6 +33,7 @@ public with sharing class ProductService {
             this.status = entryOfProduct.Product2.Status__c;
             this.image = entryOfProduct.Product2.Main_Photo__c;
             this.description = entryOfProduct.Product2.Custom_Description__c;
+            this.providedCurrency = entryOfProduct.CurrencyIsoCode;
         }
 
         public OrderItem getOrderItem(Id orderId) {

@@ -4,14 +4,32 @@ public with sharing class RecordPageController {
     public static ProductService.Product recieveRecordData(Id recordIdToDisplay) {
         try {
 
+            String wtf = UserInfo.getUserId();
+
 
             
-            PricebookEntry pricebookEntryOfProduct = [SELECT Id, UnitPrice, Product2Id, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
+            PricebookEntry pricebookEntryOfProduct = [SELECT Id, CurrencyIsoCode, Product2.CurrencyIsoCode, UnitPrice, Product2Id, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
                                                      FROM PricebookEntry
                                                      WHERE Product2.Id =: recordIdToDisplay AND Pricebook2.IsStandard = TRUE];
+
+
+
+                                                     User getUserContext = [SELECT Id, DefaultCurrencyIsoCode
+                                                     FROM User
+                                                     WHERE User.Id =: wtf ];
+
+                                                     System.debug(wtf);
+
+            System.debug(pricebookEntryOfProduct);
+
+            pricebookEntryOfProduct.Product2.CurrencyIsoCode =  getUserContext.DefaultCurrencyIsoCode;
+
  
 
             ProductService.Product wrapperToDisplay = new ProductService.Product(pricebookEntryOfProduct);
+
+
+            System.debug(wrapperToDisplay);
 
 
 
@@ -61,22 +79,35 @@ public with sharing class RecordPageController {
     @AuraEnabled
     public static void updatePriceAfterAuction(Id idOfProduct, Decimal newPrice, Id idOfUser){
         try {
-        
-            PricebookEntry pricebookEntryOfProductToPriceChange = [SELECT Id, UnitPrice, Product2Id, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
-                                                                  FROM PricebookEntry
-                                                                  WHERE Product2.Id =: idOfProduct AND Pricebook2.IsStandard = TRUE];
 
-            Auction__c auctionToBeUpdated = [SELECT Id
+           
+
+        
+            PricebookEntry pricebookEntryOfProductToPriceChange = [SELECT Id, UnitPrice, CurrencyIsoCode, Product2Id, 
+                                                                  Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, 
+                                                                  Product2.Name,Product2.Family, Product2.Status__c
+                                                                  FROM PricebookEntry
+                                                                  WHERE Product2Id =: idOfProduct AND Pricebook2.IsStandard = TRUE];
+
+
+
+                                  
+
+
+
+
+            Auction__c auctionToBeUpdated = [SELECT Status__c
                                             FROM Auction__c
-                                            WHERE Product__c =: idOfUser];
+                                            WHERE Product__c =: idOfProduct];
+
 
         pricebookEntryOfProductToPriceChange.UnitPrice = newPrice;
 
         auctionToBeUpdated.UserId__c = idOfUser;
-
+        update pricebookEntryOfProductToPriceChange;
         update auctionToBeUpdated;
 
-        update pricebookEntryOfProductToPriceChange;
+
             
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
