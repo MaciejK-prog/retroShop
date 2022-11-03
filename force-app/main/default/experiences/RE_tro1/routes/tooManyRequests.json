@@ -2,9 +2,6 @@
     "activeViewId" : "4afdc826-c019-4db4-ae50-9f99c3cd5efb",
     "appPageId" : "4d88935c-c4f1-4df5-9021-96bed4f744da",
     "configurationTags" : [ ],
-    "id" : "a9fa550d-e486-4cff-9b88-bbbeb1c6b4b1",
-    "label" : "Stream Related List",
-    "routeType" : "too-many-requests",
-    "type" : "route",
-    "urlPrefix" : "streams"
+    "id" : "48d3e528-b491-43c6-88b8-0dbf14328fb9",
+    "routeType" : "too-many-requests"
   }
