@@ -3,7 +3,7 @@
     <allowInternalUserLogin>false</allowInternalUserLogin>
     <allowMembersToFlag>false</allowMembersToFlag>
     <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
-    <communityRoles/>
+    <communityRoles />
     <disableReputationRecordConversations>false</disableReputationRecordConversations>
     <emailSenderAddress>iscariote123@gmail.com</emailSenderAddress>
     <emailSenderName>RE:tro</emailSenderName>
@@ -48,6 +48,6 @@
         <defaultTab>home</defaultTab>
         <standardTab>Chatter</standardTab>
     </tabs>
-    <urlPathPrefix>retro</urlPathPrefix>
+    <urlPathPrefix>retro/s</urlPathPrefix>
     <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
 </Network>
