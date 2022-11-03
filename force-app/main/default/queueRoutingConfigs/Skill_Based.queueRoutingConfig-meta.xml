@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QueueRoutingConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <capacityWeight>5.0</capacityWeight>
+    <isAttributeBased>true</isAttributeBased>
+    <label>Skill-Based</label>
+    <routingModel>MOST_AVAILABLE</routingModel>
+    <routingPriority>1</routingPriority>
+    <skills>
+        <skill>Structural</skill>
+    </skills>
+    <skills>
+        <skill>Electrical</skill>
+    </skills>
+    <skills>
+        <skill>Others</skill>
+    </skills>
+    <skills>
+        <skill>Electronic</skill>
+    </skills>
+    <skills>
+        <skill>Mechanical</skill>
+    </skills>
+</QueueRoutingConfig>
