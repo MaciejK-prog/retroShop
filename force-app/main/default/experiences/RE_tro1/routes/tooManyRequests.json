@@ -3,5 +3,6 @@
     "appPageId" : "4d88935c-c4f1-4df5-9021-96bed4f744da",
     "configurationTags" : [ ],
     "id" : "48d3e528-b491-43c6-88b8-0dbf14328fb9",
-    "routeType" : "too-many-requests"
+    "routeType" : "too-many-requests",
+    "type" : "route"
   }
