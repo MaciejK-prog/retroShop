@@ -1,0 +1,50 @@
+<template>
+
+<lightning-card>
+
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-file-upload
+        label="Upload main photo"
+        name="mainPhotoUploader"
+        accept={acceptedFormats}
+        record-id={myRecordId}
+        onuploadfinished={handleUploadFinished}
+    >
+    </lightning-file-upload>
+    </div>
+
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-file-upload
+        label="Upload rest of photos"
+        name="photosUploader"
+        accept={acceptedFormats}
+        record-id={myRecordId}
+        multiple
+    >
+    </lightning-file-upload>
+    </div>
+
+    <template if:true={hasTodos} for:each={todosList} for:item="todo">
+        <div key={todo.id}>{todo.text}</div>
+    </template>
+        <lightning-input
+        label="New Todo"
+        type="text"
+        onchange={handleUpdatedText}>
+    </lightning-input>
+    <lightning-button
+        label="Add Todo"
+        title="Add a new todo"
+        onclick={handleAddTodo}
+    >
+    </lightning-button>
+    <lightning-button
+        label="Go Next"
+        title="Finish todos, go next"
+        onclick={handleGoFinish}
+    >
+    </lightning-button>
+
+</lightning-card>
+    
+</template>
