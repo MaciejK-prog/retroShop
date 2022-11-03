@@ -17,20 +17,8 @@
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
-    }, {
-      "componentAttributes" : {
-        "enableVoting" : true,
-        "recordId" : "{!recordId}",
-        "showTitleInArticleHeader" : true,
-        "showTopicPills" : true,
-        "urlName" : "{!urlName}"
-      },
-      "componentName" : "selfService:singleArticleView",
-      "id" : "545fa98f-a255-4609-8d08-5ddf345bccba",
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "type" : "component"
-    }, {
+    },
+    {
       "componentAttributes" : {
         "context" : "RECORD",
         "recordId" : "{!recordId}",
