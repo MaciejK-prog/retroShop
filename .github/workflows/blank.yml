@@ -38,4 +38,4 @@ jobs:
       run: sfdx force:source:convert --rootdir=force-app --outputdir=convert
       
     - name: 'Run Test on Metadata'
-      run: sfdx force:mdapi:deploy --deploydir=convert --testlevel=RunLocalTests --checkonly -w 60 -g
+      run: sfdx force:mdapi:deploy --deploydir=convert --testlevel=RunLocalTests --checkonly --ignorewarnings -w 60 
