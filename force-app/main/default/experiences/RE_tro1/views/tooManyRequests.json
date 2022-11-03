@@ -4,11 +4,7 @@
   "id" : "35df745a-8677-4089-bd24-e491d416609d",
   "label" : "Too Many Requests",
   "regions" : [ {
-    "components" : [ {
-    } ],
-    "id" : "ddac4dbf-ff46-4eef-8d5d-d91cd69896a2",
-    "regionName" : "content",
-    "type" : "region"
+
   } ],
   "themeLayoutType" : "ServiceNotAvailable",
   "type" : "view",
