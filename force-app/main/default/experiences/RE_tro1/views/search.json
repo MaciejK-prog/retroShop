@@ -10,10 +10,7 @@
   }, {
     "components" : [ {
       "componentAttributes" : {
-        "scopes" : [ {
-          "isPublic" : true,
-          "name" : "ProductItem"
-        }, {
+        "scopes" : [{
           "isPublic" : true,
           "name" : "Product2"
         } ],
