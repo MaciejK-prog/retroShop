@@ -22,8 +22,6 @@
     <masterLabel>Web2Omni</masterLabel>
     <redirectToCustomDomain>true</redirectToCustomDomain>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
-    <siteAdmin>iscariote123@resilient-panda-sdj8lq.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>iscariote123@resilient-panda-sdj8lq.com</siteGuestRecordDefaultOwner>
     <siteTemplate>SiteTemplate</siteTemplate>
     <siteType>Visualforce</siteType>
 </CustomSite>
