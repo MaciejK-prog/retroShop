@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Choose_Pricebook</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Choose Pricebook</shortDescription>
+        <value>Choose Your Pricebook!</value>
+    </labels>
+    <labels>
+        <fullName>Description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>Discounted_Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discounted Price</shortDescription>
+        <value>Discounted Price</value>
+    </labels>
+    <labels>
+        <fullName>Invalid_Discount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Invalid Discount</shortDescription>
+        <value>Invalid Discount</value>
+    </labels>
+    <labels>
+        <fullName>Product</fullName>
+        <categories>table labels</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Product</shortDescription>
+        <value>Product</value>
+    </labels>
+    <labels>
+        <fullName>Product_Code</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Product Code</shortDescription>
+        <value>Product Code</value>
+    </labels>
+    <labels>
+        <fullName>Set_Your_Discount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Set Your Discount</shortDescription>
+        <value>Set Your Discount</value>
+    </labels>
+    <labels>
+        <fullName>Standard_Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Standard Price</shortDescription>
+        <value>Standard Price</value>
+    </labels>
+    <labels>
+        <fullName>Status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>precentage</fullName>
+        <categories>checkbox label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>precentage</shortDescription>
+        <value>(%)</value>
+    </labels>
+</CustomLabels>
