@@ -68,17 +68,6 @@
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
-    }, {
-      "componentAttributes" : {
-        "numberOfItems" : 5,
-        "showViewCounts" : true,
-        "title" : "Related Articles"
-      },
-      "componentName" : "selfService:similarArticles42",
-      "id" : "31da23fb-927e-4187-9927-ee3dbcdaf467",
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "type" : "component"
     }],
     "id" : "6d538df2-496d-4d77-acdf-8912062584d6",
     "regionName" : "sidebar",
