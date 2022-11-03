@@ -1,6 +1,6 @@
 {
   "appPageId" : "4d88935c-c4f1-4df5-9021-96bed4f744da",
-  "componentName" : "siteforce:sldsOneColLayout",
+  "componentName" : "siteforce:sldsTwoCol48Layout",
   "id" : "779e02f8-5e23-4936-b809-aa1c128b67d6",
   "label" : "Record Detail",
   "regions" : [ {
@@ -14,23 +14,6 @@
       },
       "componentName" : "forceCommunity:recordHeadline",
       "id" : "748ef4b0-03dd-4cd3-a397-630ce1df9aae",
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "type" : "component"
-    }, {
-      "componentAttributes" : {
-        "detailsTabLabel" : "Details",
-        "discussionsTabLabel" : "Feed",
-        "recordId" : "{!recordId}",
-        "relatedTabLabel" : "Related",
-        "tab1Type" : "details",
-        "tab2Type" : "related",
-        "tab3Type" : "chatter",
-        "tab4Type" : "none",
-        "timelineTabLabel" : "Activity"
-      },
-      "componentName" : "forceCommunity:recordHomeTabs",
-      "id" : "1ab66b1e-5c0d-46fb-8b97-813d2e6ee5ef",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -56,6 +39,18 @@
     } ],
     "id" : "55585d8d-4c6f-4c89-9833-09cf938c9e2b",
     "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:recordPageComponent",
+      "id" : "43614f8f-5b14-440a-972b-f3db2c2124fb",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "0149c530-f1a1-4fc9-b781-a76dcbf07dd1",
+    "regionName" : "sidebar",
     "type" : "region"
   } ],
   "themeLayoutType" : "Inner",

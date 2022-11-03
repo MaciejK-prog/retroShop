@@ -30,13 +30,8 @@
     } ],
     "type" : "view"
   }, {
-    "componentAttributes" : {
-      "IsDefaultHeaderHidden" : false,
-      "IsDefaultNotificationsHidden" : false,
-      "fixedPageWidth" : 1140,
-      "isPageWidthFixed" : true
-    },
-    "componentName" : "siteforce:serviceBody",
+    "componentAttributes" : { },
+    "componentName" : "c:MainThemeLayout",
     "id" : "068231ff-ca0f-4a9a-ba41-f9c12703ae04",
     "label" : "Default",
     "regions" : [ {
@@ -46,33 +41,21 @@
     }, {
       "components" : [ {
         "componentAttributes" : {
-          "contineActionLabel" : "Ask the community",
-          "continueLabel" : "Don’t see it?",
-          "crossObjectTypeaheadApiNames" : [ {
+          "maxAutoCompleteResults" : 5,
+          "searchLabel" : "Search...",
+          "searchObjects" : [ {
             "isPublic" : true,
-            "name" : "KnowledgeArticleVersion"
+            "name" : "ProductItem"
           }, {
             "isPublic" : true,
-            "name" : "FeedItem"
-          }, {
-            "isPublic" : false,
-            "name" : "Case"
+            "name" : "Product2"
           }, {
             "isPublic" : true,
-            "name" : "CollaborationGroup"
-          } ],
-          "disableCrossObjectRelevance" : false,
-          "enableAutocomplete" : true,
-          "maxNumberOfResults" : 6,
-          "placeholder" : "Search...",
-          "questionResultsFirst" : false,
-          "showContinueAction" : true,
-          "showDetails" : false,
-          "showTopics" : true,
-          "signInActionLabel" : "Sign in to ask the community"
+            "name" : "Order"
+          } ]
         },
-        "componentName" : "forceCommunity:searchBox",
-        "id" : "891d50dd-bc51-4f1e-98dc-23d21b8f7ca9",
+        "componentName" : "forceCommunity:globalSearchInput",
+        "id" : "cacf2a5b-299d-4b46-927f-2640e826d787",
         "renditionMap" : { },
         "type" : "component"
       } ],
@@ -109,12 +92,12 @@
     }, {
       "components" : [ {
         "componentAttributes" : {
-          "NavigationMenuEditorRefresh" : "",
-          "hideAppLauncher" : false,
+          "NavigationMenuEditorRefresh" : "Default_Navigation",
+          "hideAppLauncher" : true,
           "hideHomeText" : false
         },
         "componentName" : "forceCommunity:globalNavigation",
-        "id" : "fa90c840-3613-4e0f-a031-aab3b2d4b608",
+        "id" : "bf8e3e8c-c7b1-40b6-8784-e5e74c424ca0",
         "renditionMap" : { },
         "type" : "component"
       } ],

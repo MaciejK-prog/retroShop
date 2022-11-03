@@ -1,0 +1,45 @@
+{
+  "appPageId" : "4d88935c-c4f1-4df5-9021-96bed4f744da",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "1e0c3923-5ff0-4a75-805f-8676474aed96",
+  "label" : "toys",
+  "regions" : [ {
+    "id" : "fd7e0f12-96ed-4dde-aefb-9e98033cbada",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:toysPageDisplay",
+      "id" : "120f730d-53ac-42f0-ac34-de768bcf8f60",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "3f194275-1e4a-4942-92ac-d3a05d170466",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "ed495995-fe7f-4d7d-9852-82d6d294a240",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "toys"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "1f22289e-a118-4cfc-bf57-ea75f556035f",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "53295470-f9f9-4ecd-89e0-b27a094e63f6",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-toys"
+}

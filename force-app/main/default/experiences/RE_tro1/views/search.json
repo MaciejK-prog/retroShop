@@ -12,16 +12,10 @@
       "componentAttributes" : {
         "scopes" : [ {
           "isPublic" : true,
-          "name" : "FeedPost"
+          "name" : "ProductItem"
         }, {
           "isPublic" : true,
-          "name" : "KnowledgeArticleVersion"
-        }, {
-          "isPublic" : false,
-          "name" : "Case"
-        }, {
-          "isPublic" : true,
-          "name" : "CollaborationGroup"
+          "name" : "Product2"
         } ],
         "searchResultFiltering" : true,
         "searchTerm" : "{!term}",
