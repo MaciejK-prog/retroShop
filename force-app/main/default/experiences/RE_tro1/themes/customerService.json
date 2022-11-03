@@ -45,9 +45,6 @@
           "searchLabel" : "Search...",
           "searchObjects" : [ {
             "isPublic" : true,
-            "name" : "ProductItem"
-          }, {
-            "isPublic" : true,
             "name" : "Product2"
           }, {
             "isPublic" : true,
