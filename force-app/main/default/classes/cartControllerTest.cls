@@ -370,4 +370,48 @@ public with sharing class cartControllerTest {
         
     }
 
+
+    @IsTest
+    static void makeDataCreateUser(){
+
+        Auth.UserData data  = new Auth.UserData(null, null, null, null, null, null,null, null, null, null, null);
+        Network portalIds = [SELECT Id FROM Network LIMIT 1];
+        Id portalId = portalIds.Id;
+
+        AutocreatedRegHandler1662634123186 handler = new AutocreatedRegHandler1662634123186();
+
+        
+        Test.startTest();
+
+        handler.createUser(portalId, data);
+
+        Test.stopTest();
+        
+    }
+
+
+
+    @IsTest
+    static void makeDataUpdateUser(){
+
+        Map<String,String> attributeMap = new Map<String,String>();
+
+
+        Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
+        Network portalIds = [SELECT Id FROM Network LIMIT 1];
+        Id portalId = portalIds.Id;
+
+        Id userId = UserInfo.getUserId();
+
+        AutocreatedRegHandler1662634123186 handler = new AutocreatedRegHandler1662634123186();
+
+        
+        Test.startTest();
+
+        handler.updateUser(userId, portalId, data);
+
+        Test.stopTest();
+        
+    }
+
 }
