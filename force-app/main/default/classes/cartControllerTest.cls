@@ -354,10 +354,20 @@ public with sharing class cartControllerTest {
     }
 
     @IsTest
-    static void makeData(){
+    static void makeDatacanCreateUser(){
+
+        Auth.UserData data  = new Auth.UserData(null, null, null, null, null, null,null, null, null, null, null);
+
+
+        AutocreatedRegHandler1662634123186 handler = new AutocreatedRegHandler1662634123186();
+
+        
+        Test.startTest();
+
+        handler.canCreateUser(data);
+
+        Test.stopTest();
         
     }
-
-
 
 }
