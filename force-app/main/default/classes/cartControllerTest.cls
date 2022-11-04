@@ -375,8 +375,8 @@ public with sharing class cartControllerTest {
     static void makeDataCreateUser(){
 
         Auth.UserData data  = new Auth.UserData(null, null, null, null, null, null,null, null, null, null, null);
-        Network portalIds = [SELECT Id FROM Network LIMIT 1];
-        Id portalId = portalIds.Id;
+       
+        Id portalId = null;
 
         AutocreatedRegHandler1662634123186 handler = new AutocreatedRegHandler1662634123186();
 
@@ -398,8 +398,8 @@ public with sharing class cartControllerTest {
 
 
         Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
-        Network portalIds = [SELECT Id FROM Network LIMIT 1];
-        Id portalId = portalIds.Id;
+        
+        Id portalId = null;
 
         Id userId = UserInfo.getUserId();
 
