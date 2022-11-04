@@ -87,7 +87,6 @@ public with sharing class cartControllerTest {
 
 
 
-
     }
 
 
@@ -352,6 +351,11 @@ public with sharing class cartControllerTest {
         Test.stopTest();
 
 
+    }
+
+    @IsTest
+    static void makeData(){
+        
     }
 
 
