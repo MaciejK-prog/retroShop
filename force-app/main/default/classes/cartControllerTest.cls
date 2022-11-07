@@ -22,7 +22,7 @@ public with sharing class cartControllerTest {
 
 
         Product2 productForTestBatch = new Product2();
-        productForTestBatch.Name = 'test';
+        productForTestBatch.Name = 'test33';
         productForTestBatch.ProductCode ='1234';
         productForTestBatch.Family ='test';
         productForTestBatch.Status__c ='Normal';
@@ -70,7 +70,7 @@ public with sharing class cartControllerTest {
 
         
         PricebookEntry standardForTestBatch = new PricebookEntry();
-        standardForTestBatch.Product2Id = productForTestBatch.Id;
+        standardForTestBatch.Product2Id = productForTest.Id;
         standardForTestBatch.Pricebook2Id = standardPricebook.Id;
         standardForTestBatch.IsActive = true;
         standardForTestBatch.CurrencyIsoCode = 'EUR';
