@@ -468,4 +468,36 @@ public with sharing class cartControllerTest {
 
     }
 
+
+    @IsTest
+    static void batchScheduleTest() {
+
+        
+
+        Test.startTest();
+
+       batchScheduler.scheduler();
+        
+        Test.stopTest();
+
+
+    }
+
+
+    @IsTest
+    static void productWrapperTest() {
+
+        Product2 productToTest = [SELECT Id FROM Product2 WHERE Name ='test'];
+
+        
+
+        Test.startTest();
+
+       DiscountManagerController.ProductWrapper wrapper  = new DiscountManagerController.ProductWrapper(productToTest);
+        
+        Test.stopTest();
+
+
+    }
+
 }
