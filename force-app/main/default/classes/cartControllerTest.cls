@@ -58,6 +58,20 @@ public with sharing class cartControllerTest {
         update standardPricebook;
 
 
+        
+        PricebookEntry standardForTestBatch = new PricebookEntry();
+        standardForTestBatch.Product2Id = productForTest.Id;
+        standardForTestBatch.Pricebook2Id = standardPricebook.Id;
+        standardForTestBatch.IsActive = true;
+        standardForTestBatch.CurrencyIsoCode = 'EUR';
+        standardForTestBatch.UnitPrice = 10.00;
+        standardForTestBatch.IsActive = true;
+        standardForTestBatch.EndDate__c = Date.today() - 1;
+
+    
+        insert standardForTestBatch;
+
+
         PricebookEntry standardForTest = new PricebookEntry();
         standardForTest.Product2Id = productForTest.Id;
         standardForTest.Pricebook2Id = standardPricebook.Id;
