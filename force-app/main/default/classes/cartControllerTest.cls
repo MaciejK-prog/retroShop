@@ -70,7 +70,7 @@ public with sharing class cartControllerTest {
 
         
         PricebookEntry standardForTestBatch = new PricebookEntry();
-        standardForTestBatch.Product2Id = productForTest.Id;
+        standardForTestBatch.Product2Id = productForTestBatch.Id;
         standardForTestBatch.Pricebook2Id = standardPricebook.Id;
         standardForTestBatch.IsActive = true;
         standardForTestBatch.CurrencyIsoCode = 'EUR';
