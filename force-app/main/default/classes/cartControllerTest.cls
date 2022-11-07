@@ -29,6 +29,26 @@ public with sharing class cartControllerTest {
 
         insert productForTestFalse;
 
+        Product2 productForTestHotDeal = new Product2();
+        productForTestHotDeal.Name = 'test3';
+        productForTestHotDeal.ProductCode ='1234';
+        productForTestHotDeal.Family ='test';
+        productForTestHotDeal.Status__c ='Hot Deal';
+        productForTestHotDeal.IsActive = true;
+
+        insert productForTestHotDeal;
+
+        Product2 productForTestSale = new Product2();
+        productForTestSale.Name = 'test4';
+        productForTestSale.ProductCode ='1234';
+        productForTestSale.Family ='test';
+        productForTestSale.Status__c ='Sale';
+        productForTestSale.IsActive = true;
+
+        insert productForTestSale;
+
+        
+
         Id pricebookId = Test.getStandardPricebookId();
 
         Pricebook2 standardPricebook = new Pricebook2();
@@ -56,13 +76,50 @@ public with sharing class cartControllerTest {
 
         PricebookEntry entryForTest = new PricebookEntry();
         entryForTest.Product2Id = productForTest.Id;
-        entryForTest.Pricebook2Id = pricebookForTest.Id;
+        entryForTest.Pricebook2Id =  pricebookForTest.Id;
         entryForTest.IsActive = true;
         entryForTest.CurrencyIsoCode = 'EUR';
         entryForTest.UnitPrice = 11.00;
     
-
         insert entryForTest;
+
+        PricebookEntry entryForTestUSD = new PricebookEntry();
+        entryForTestUSD.Product2Id = productForTestSale.Id;
+        entryForTestUSD.Pricebook2Id =  standardPricebook.Id;
+        entryForTestUSD.IsActive = true;
+        entryForTestUSD.CurrencyIsoCode = 'USD';
+        entryForTestUSD.UnitPrice = 11.00;
+    
+
+        insert entryForTestUSD;
+
+        PricebookEntry entryForTestPLN = new PricebookEntry();
+        entryForTestPLN.Product2Id = productForTestHotDeal.Id;
+        entryForTestPLN.Pricebook2Id =  standardPricebook.Id;
+        entryForTestPLN.IsActive = true;
+        entryForTestPLN.CurrencyIsoCode = 'PLN';
+        entryForTestPLN.UnitPrice = 11.00;
+
+        insert entryForTestPLN;
+
+        PricebookEntry entryForTestPLN2 = new PricebookEntry();
+        entryForTestPLN2.Product2Id = productForTestSale.Id;
+        entryForTestPLN2.Pricebook2Id =  pricebookForTest.Id;
+        entryForTestPLN2.IsActive = true;
+        entryForTestPLN2.CurrencyIsoCode = 'PLN';
+        entryForTestPLN2.UnitPrice = 11.00;
+
+        insert entryForTestPLN2;
+
+        PricebookEntry entryForTestUSD2 = new PricebookEntry();
+        entryForTestUSD2.Product2Id = productForTestHotDeal.Id;
+        entryForTestUSD2.Pricebook2Id =  pricebookForTest.Id;
+        entryForTestUSD2.IsActive = true;
+        entryForTestUSD2.CurrencyIsoCode = 'USD';
+        entryForTestUSD2.UnitPrice = 11.00;
+    
+
+        insert entryForTestUSD2;
 
 
         Auction__c auctionForTest = new Auction__c();
