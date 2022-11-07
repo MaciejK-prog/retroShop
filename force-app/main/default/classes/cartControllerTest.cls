@@ -71,7 +71,7 @@ public with sharing class cartControllerTest {
 
         Order orderForTestFalse = new Order();
         orderForTestFalse.Pricebook2Id = pricebookForTest.Id;
-        orderForTestFalse.Name = 'test';
+        orderForTestFalse.Name = 'test2';
         orderForTestFalse.AccountId = accountForTest.Id;
         orderForTestFalse.Status = 'Draft';
         orderForTestFalse.EffectiveDate = Date.today();
@@ -131,7 +131,7 @@ public with sharing class cartControllerTest {
     @IsTest
     static void testMethodGetOrder() {
         Order orderToTest = [SELECT Id
-                            FROM Order];
+                            FROM Order WHERE Name='test'];
 
         Test.startTest();
 
@@ -212,7 +212,7 @@ public with sharing class cartControllerTest {
     @IsTest
     static void saveCommentTest() {
 
-        Product2 productToComment = [SELECT Id FROM Product2];
+        Product2 productToComment = [SELECT Id FROM Product2 WHERE Name='test'];
 
         Commentary__c commentToRecieve = [SELECT Id FROM Commentary__c];
 
@@ -230,7 +230,7 @@ public with sharing class cartControllerTest {
     @IsTest
     static void getCommentListTest() {
 
-        Product2 productsToRecieveComments = [SELECT Id FROM Product2];
+        Product2 productsToRecieveComments = [SELECT Id FROM Product2 WHERE Name='test'];
 
         String idofProduct = (String)productsToRecieveComments.Id;
 
@@ -280,7 +280,7 @@ public with sharing class cartControllerTest {
     @IsTest
     static void pricebookEntryInsertTest() {
 
-        Product2 idToInsert = [SELECT Id, ProductCode  FROM Product2];
+        Product2 idToInsert = [SELECT Id, ProductCode  FROM Product2 WHERE Name='test'];
 
         PriceBook2 idToInsertPB = [SELECT Id FROM PriceBook2];
 
