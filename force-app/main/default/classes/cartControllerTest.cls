@@ -263,13 +263,17 @@ public with sharing class cartControllerTest {
         Datetime dateToTest = Date.today();
 
 
+        Product2 productToWrap = [SELECT Id, Name , Family , Description, ProductCode  FROM Product2 WHERE Name = 'test'];
 
-        String wrapperInString = 'test, test, test, 20.00, 123456789012345';
+       
+        DiscountManagerController.ProductWrapper wrapper  = new DiscountManagerController.ProductWrapper(productToWrap);
+
+        String serializedProduct = JSON.serialize(wrapper);
 
         Test.startTest();
 
-        DiscountManagerCalculatorController.createNewEntries(wrapperInString, 20 , 'currency', 'Hot Deals', dateToTest, dateToTest);
-        DiscountManagerCalculatorController.createNewEntries(wrapperInString, 20 , 'precentage', 'Hot Deals', dateToTest, dateToTest);
+        DiscountManagerCalculatorController.createNewEntries(serializedProduct, 20 , 'currency', 'Hot Deals', dateToTest, dateToTest);
+        DiscountManagerCalculatorController.createNewEntries(serializedProduct, 20 , 'precentage', 'Hot Deals', dateToTest, dateToTest);
 
         Test.stopTest();
     }
