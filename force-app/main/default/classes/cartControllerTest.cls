@@ -268,7 +268,10 @@ public with sharing class cartControllerTest {
        
         DiscountManagerController.ProductWrapper wrapper  = new DiscountManagerController.ProductWrapper(productToWrap);
 
-        String serializedProduct = JSON.serialize(wrapper);
+
+        List<DiscountManagerController.ProductWrapper> listOfWrappers  = new List<DiscountManagerController.ProductWrapper>{wrapper};
+
+        String serializedProduct = JSON.serialize(listOfWrappers);
 
         Test.startTest();
 
