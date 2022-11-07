@@ -31,10 +31,16 @@ public with sharing class cartControllerTest {
 
         Id pricebookId = Test.getStandardPricebookId();
 
+        Pricebook2 standardPricebook = new Pricebook2();
+        standardPricebook.Id = Test.getStandardPricebookId();
+        standardPricebook.IsActive = true;
+
+        update standardPricebook;
+
 
         PricebookEntry standardForTest = new PricebookEntry();
         standardForTest.Product2Id = productForTest.Id;
-        standardForTest.Pricebook2Id = pricebookId;
+        standardForTest.Pricebook2Id = standardPricebook.Id;
         standardForTest.IsActive = true;
         standardForTest.CurrencyIsoCode = 'EUR';
         standardForTest.UnitPrice = 10.00;
@@ -146,7 +152,15 @@ public with sharing class cartControllerTest {
     @IsTest
     static void testRecieveRecord() {
         Product2 productToTest = [SELECT Id
-                            FROM Product2 WHERE Name='test'];
+                                 FROM Product2 WHERE Name='test'];
+        
+        System.debug(productToTest);
+
+        List<PricebookEntry> pricebookEntryOfProduct = [SELECT Id, CurrencyIsoCode, Product2.CurrencyIsoCode, UnitPrice, Product2Id, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
+        FROM PricebookEntry
+        WHERE PriceBook2.IsStandard = true];
+
+            System.debug(pricebookEntryOfProduct);
 
         Test.startTest();
 

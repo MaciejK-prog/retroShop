@@ -4,6 +4,8 @@ public with sharing class RecordPageController {
     public static ProductService.Product recieveRecordData(Id recordIdToDisplay) {
         try {
 
+            System.debug('ej jestem w recieve record');
+
             String wtf = UserInfo.getUserId();
 
 
