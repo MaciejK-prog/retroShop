@@ -70,13 +70,12 @@ public with sharing class cartControllerTest {
         insert orderForTest;
 
         Order orderForTestFalse = new Order();
-        orderForTestFalse.Pricebook2Id = null;
+        orderForTestFalse.Pricebook2Id = pricebookForTest.Id;
         orderForTestFalse.Name = 'test';
-        orderForTestFalse.AccountId = null;
+        orderForTestFalse.AccountId = accountForTest.Id;
         orderForTestFalse.Status = null;
         orderForTestFalse.EffectiveDate = Date.today();
         orderForTestFalse.CurrencyIsoCode = null;
-
 
         insert orderForTestFalse;
 
@@ -250,6 +249,7 @@ public with sharing class cartControllerTest {
         Test.startTest();
 
         DiscountManagerCalculatorController.countPrecentageDiscount(100.00, 20);
+        DiscountManagerCalculatorController.countPrecentageDiscount(null, null);
 
         Test.stopTest();
     }
@@ -261,6 +261,7 @@ public with sharing class cartControllerTest {
         Test.startTest();
 
         DiscountManagerCalculatorController.countCurrencyDiscount(100.00, 20);
+        DiscountManagerCalculatorController.countCurrencyDiscount(null, null);
 
         Test.stopTest();
     }
