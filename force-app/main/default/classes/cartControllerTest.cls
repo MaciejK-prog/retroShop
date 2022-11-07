@@ -257,6 +257,19 @@ public with sharing class cartControllerTest {
         Test.stopTest();
     }
 
+    @IsTest
+    static void createEntryTest() {
+
+        Datetime dateToTest = Date.today();
+
+        Test.startTest();
+
+        DiscountManagerCalculatorController.createNewEntries(null, 20 , 'currency', 'Hot Deals', dateToTest, dateToTest);
+        DiscountManagerCalculatorController.createNewEntries(null, 20 , 'precentage', 'Hot Deals', dateToTest, dateToTest);
+
+        Test.stopTest();
+    }
+
 
     @IsTest
     static void countDiscountCurrencyTest() {
@@ -284,6 +297,7 @@ public with sharing class cartControllerTest {
     static void pricebookEntryInsertTest() {
 
         Product2 idToInsert = [SELECT Id, ProductCode  FROM Product2 WHERE Name='test'];
+
 
         PriceBook2 idToInsertPB = [SELECT Id FROM PriceBook2];
 
@@ -342,11 +356,11 @@ public with sharing class cartControllerTest {
 
         Product2 productsToRecieve = [SELECT Id FROM Product2 WHERE Name='test'];
 
-        String idofProduct = (String)productsToRecieve.Id;
+        String idOfPricebook = (String) productsToRecieve.Id;
 
         Test.startTest();
 
-        PhotoUploader.getIdsOfDocumentContentVersion(idOfProduct);
+        PhotoUploader.getIdsOfDocumentContentVersion(idOfPricebook);
 
         Test.stopTest();
 
