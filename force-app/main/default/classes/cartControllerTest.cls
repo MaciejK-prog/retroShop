@@ -132,10 +132,13 @@ public with sharing class cartControllerTest {
     static void testMethodGetOrder() {
         Order orderToTest = [SELECT Id
                             FROM Order WHERE Name='test'];
+        Order orderToTestToFail = [SELECT Id
+                            FROM Order WHERE Name='test2'];
 
         Test.startTest();
 
         cartController.getOrder(orderToTest.Id);
+        cartController.getOrder(orderToTestToFail.Id);
 
         Test.stopTest();
     }
@@ -438,6 +441,22 @@ public with sharing class cartControllerTest {
 
         Test.stopTest();
         
+    }
+
+
+    @IsTest
+    static void batchTest() {
+
+        
+
+        Test.startTest();
+
+       discountManagerBatch batch = new discountManagerBatch();
+       Database.executeBatch(batch);
+
+        Test.stopTest();
+
+
     }
 
 }
