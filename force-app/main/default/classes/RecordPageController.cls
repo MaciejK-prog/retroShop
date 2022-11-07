@@ -36,6 +36,7 @@ public with sharing class RecordPageController {
             return wrapperToDisplay;
             
         } catch (Exception e) {
+            System.debug(e.getMessage());
             throw new AuraHandledException(e.getMessage());
         }
     }
