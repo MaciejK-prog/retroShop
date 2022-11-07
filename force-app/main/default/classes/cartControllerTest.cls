@@ -73,7 +73,7 @@ public with sharing class cartControllerTest {
         orderForTestFalse.Pricebook2Id = pricebookForTest.Id;
         orderForTestFalse.Name = 'test';
         orderForTestFalse.AccountId = accountForTest.Id;
-        orderForTestFalse.Status = null;
+        orderForTestFalse.Status = 'Draft';
         orderForTestFalse.EffectiveDate = Date.today();
         orderForTestFalse.CurrencyIsoCode = null;
 
