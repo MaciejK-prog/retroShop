@@ -486,7 +486,7 @@ public with sharing class cartControllerTest {
         Product2 idToInsert = [SELECT Id, ProductCode  FROM Product2 WHERE Name='test'];
 
 
-        PriceBook2 idToInsertPB = [SELECT Id FROM PriceBook2];
+        PriceBook2 idToInsertPB = [SELECT Id FROM PriceBook2 LIMIT 1];
 
         String id1 = (String)idToInsert.Id;
         String id2 =  (String)idToInsertPb.Id;
