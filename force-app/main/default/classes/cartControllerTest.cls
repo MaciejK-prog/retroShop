@@ -417,6 +417,7 @@ public with sharing class cartControllerTest {
         Test.startTest();
 
         handler.createUser(portalId, data);
+        
         handler.createUser(portalId, data2);
 
         Test.stopTest();
@@ -432,7 +433,7 @@ public with sharing class cartControllerTest {
 
 
         Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
-        Auth.UserData data2  = new Auth.UserData(null, null, null, null, null, null,null, null, null, null, null);
+        Auth.UserData data2  = new Auth.UserData(null, null, null, null, 'test@test.com', null,null, null, null, null, null);
         
         Id portalId = null;
 
