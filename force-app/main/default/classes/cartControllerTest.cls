@@ -262,10 +262,14 @@ public with sharing class cartControllerTest {
 
         Datetime dateToTest = Date.today();
 
+
+
+        String wrapperInString = 'test, test, test, 20.00, 123456789012345';
+
         Test.startTest();
 
-        DiscountManagerCalculatorController.createNewEntries(null, 20 , 'currency', 'Hot Deals', dateToTest, dateToTest);
-        DiscountManagerCalculatorController.createNewEntries(null, 20 , 'precentage', 'Hot Deals', dateToTest, dateToTest);
+        DiscountManagerCalculatorController.createNewEntries(wrapperInString, 20 , 'currency', 'Hot Deals', dateToTest, dateToTest);
+        DiscountManagerCalculatorController.createNewEntries(wrapperInString, 20 , 'precentage', 'Hot Deals', dateToTest, dateToTest);
 
         Test.stopTest();
     }
