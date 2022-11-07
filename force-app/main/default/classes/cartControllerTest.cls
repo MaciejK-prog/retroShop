@@ -487,7 +487,7 @@ public with sharing class cartControllerTest {
     @IsTest
     static void productWrapperTest() {
 
-        Product2 productToTest = [SELECT Id FROM Product2 WHERE Name ='test'];
+        Product2 productToTest = [SELECT Id, Name, Family, ProductCode, Description  FROM Product2 WHERE Name ='test'];
 
         
 
