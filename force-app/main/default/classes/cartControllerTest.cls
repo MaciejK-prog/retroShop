@@ -89,6 +89,7 @@ public with sharing class cartControllerTest {
         entryForTestUSD.IsActive = true;
         entryForTestUSD.CurrencyIsoCode = 'USD';
         entryForTestUSD.UnitPrice = 11.00;
+        standardForTest.IsActive = true;
     
 
         insert entryForTestUSD;
@@ -99,6 +100,7 @@ public with sharing class cartControllerTest {
         entryForTestPLN.IsActive = true;
         entryForTestPLN.CurrencyIsoCode = 'PLN';
         entryForTestPLN.UnitPrice = 11.00;
+        standardForTest.IsActive = true;
 
         insert entryForTestPLN;
 
@@ -106,7 +108,7 @@ public with sharing class cartControllerTest {
         entryForTestPLN2.Product2Id = productForTestSale.Id;
         entryForTestPLN2.Pricebook2Id =  pricebookForTest.Id;
         entryForTestPLN2.IsActive = true;
-        entryForTestPLN2.CurrencyIsoCode = 'PLN';
+        entryForTestPLN2.CurrencyIsoCode = 'USD';
         entryForTestPLN2.UnitPrice = 11.00;
 
         insert entryForTestPLN2;
@@ -115,7 +117,7 @@ public with sharing class cartControllerTest {
         entryForTestUSD2.Product2Id = productForTestHotDeal.Id;
         entryForTestUSD2.Pricebook2Id =  pricebookForTest.Id;
         entryForTestUSD2.IsActive = true;
-        entryForTestUSD2.CurrencyIsoCode = 'USD';
+        entryForTestUSD2.CurrencyIsoCode = 'PLN';
         entryForTestUSD2.UnitPrice = 11.00;
     
 
