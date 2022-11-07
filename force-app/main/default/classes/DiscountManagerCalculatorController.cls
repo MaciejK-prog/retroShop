@@ -81,6 +81,7 @@ public with sharing class DiscountManagerCalculatorController {
             return allResultsList;
 
         } catch (Exception e) {
+            System.debug(e);
             throw new AuraHandledException(e.getMessage());
         }
     }
