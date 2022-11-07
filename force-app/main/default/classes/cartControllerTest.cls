@@ -606,7 +606,7 @@ public with sharing class cartControllerTest {
 
         Map<String,String> attributeMap = new Map<String,String>();
 
-        Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com',null, null, null, null, null, null);
+        Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com','franek', 'janek', 'google', null, null, attributeMap);
 
         Auth.UserData data2  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
 
