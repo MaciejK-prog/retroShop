@@ -144,6 +144,21 @@ public with sharing class cartControllerTest {
     }
 
     @IsTest
+    static void testRecieveRecord() {
+        Product2 productToTest = [SELECT Id
+                            FROM Product2 WHERE Name='test'];
+
+        Test.startTest();
+
+        RecordPageController.recieveRecordData(productToTest.Id);
+
+
+        Test.stopTest();
+    }
+
+    
+
+    @IsTest
     static void testMethodrecieveCaseBody() {
        Case caseToTest = [SELECT Id
                             FROM Case];
