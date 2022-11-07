@@ -92,6 +92,8 @@ public with sharing class RecordPageController {
                                                                   FROM PricebookEntry
                                                                   WHERE Product2Id =: idOfProduct AND Pricebook2.IsStandard = TRUE];
 
+            System.debug(pricebookEntryOfProductToPriceChange);
+
 
 
                                   
@@ -102,6 +104,8 @@ public with sharing class RecordPageController {
             Auction__c auctionToBeUpdated = [SELECT Status__c
                                             FROM Auction__c
                                             WHERE Product__c =: idOfProduct];
+
+
 
 
         pricebookEntryOfProductToPriceChange.UnitPrice = newPrice;

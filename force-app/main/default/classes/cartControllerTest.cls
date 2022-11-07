@@ -64,6 +64,16 @@ public with sharing class cartControllerTest {
 
         insert entryForTest;
 
+
+        Auction__c auctionForTest = new Auction__c();
+        auctionForTest.Product__c = productForTest.Id;
+        auctionForTest.Status__c = true;
+        auctionForTest.End_Date__c = date.today();
+        auctionForTest.Start_Date__c = date.today();
+        auctionForTest.Start_Price__c = 10.00;
+
+        insert auctionForTest;
+
         Order orderForTest = new Order();
         orderForTest.Pricebook2Id = pricebookForTest.Id;
         orderForTest.Name = 'test';
@@ -74,6 +84,7 @@ public with sharing class cartControllerTest {
 
 
         insert orderForTest;
+
 
         Order orderForTestFalse = new Order();
         orderForTestFalse.Pricebook2Id = pricebookForTest.Id;
@@ -168,6 +179,43 @@ public with sharing class cartControllerTest {
 
 
         Test.stopTest();
+    }
+
+
+    @IsTest
+    static void updatePriceTest() {
+        Product2 productToTest = [SELECT Id
+        FROM Product2 WHERE Name='test'];
+
+        Profile p = [SELECT Id FROM Profile WHERE Name='Standard User'];
+
+        User u2 = new User(Alias = 'newUser', Email='newuser@testorg.com',
+        EmailEncodingKey='UTF-8', LastName='Testing', LanguageLocaleKey='en_US',
+        LocaleSidKey='en_US', ProfileId = p.Id,
+        TimeZoneSidKey='America/Los_Angeles', UserName='newuser@testorg.com');
+
+        System.debug(p);
+        System.debug(u2);
+
+        Test.startTest();
+
+        RecordPageController.updatePriceAfterAuction(productToTest.Id, 30.00, u2.Id);
+
+        Test.stopTest();
+    }
+
+    @IsTest
+    static void isOnAuctionTest() {
+
+        Product2 productToTest = [SELECT Id
+        FROM Product2 WHERE Name='test'];
+
+        test.startTest();
+
+        RecordPageController.checkIfProductIsOnAuction(productToTest.Id);
+
+        Test.stopTest();
+
     }
 
     
