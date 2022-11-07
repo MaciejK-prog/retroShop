@@ -156,7 +156,7 @@ public with sharing class cartControllerTest {
     static void createCaseTest() {
 
         Product2 productTest = [SELECT Id 
-                                FROM Product2];
+                                FROM Product2 WHERE Name='test'];
 
         OrderItem itemTest = [SELECT Id
                              FROM OrderItem];
@@ -248,8 +248,8 @@ public with sharing class cartControllerTest {
 
         Test.startTest();
 
-        DiscountManagerCalculatorController.countPrecentageDiscount(100.00, 20);
-        DiscountManagerCalculatorController.countPrecentageDiscount(null, null);
+        DiscountManagerCalculatorController.countPrecentageDiscount(100.00 , 20);
+        DiscountManagerCalculatorController.countPrecentageDiscount(100.00 , 200);
 
         Test.stopTest();
     }
@@ -261,7 +261,7 @@ public with sharing class cartControllerTest {
         Test.startTest();
 
         DiscountManagerCalculatorController.countCurrencyDiscount(100.00, 20);
-        DiscountManagerCalculatorController.countCurrencyDiscount(null, null);
+        DiscountManagerCalculatorController.countCurrencyDiscount(100.00, 500);
 
         Test.stopTest();
     }
@@ -337,7 +337,7 @@ public with sharing class cartControllerTest {
     @IsTest
     static void getIdsOfDocumentContentVersionTest() {
 
-        Product2 productsToRecieve = [SELECT Id FROM Product2];
+        Product2 productsToRecieve = [SELECT Id FROM Product2 WHERE Name='test'];
 
         String idofProduct = (String)productsToRecieve.Id;
 
@@ -353,7 +353,7 @@ public with sharing class cartControllerTest {
     @IsTest
     static void getProductTest() {
 
-        Product2 productsToRecieve = [SELECT Id FROM Product2];
+        Product2 productsToRecieve = [SELECT Id FROM Product2 WHERE Name='test'];
 
         Test.startTest();
 
@@ -368,7 +368,7 @@ public with sharing class cartControllerTest {
     @IsTest
     static void setPhotoAsMainTest() {
 
-        Product2 productsToRecieve = [SELECT Id FROM Product2];
+        Product2 productsToRecieve = [SELECT Id FROM Product2 WHERE Name='test'];
 
         Test.startTest();
 
