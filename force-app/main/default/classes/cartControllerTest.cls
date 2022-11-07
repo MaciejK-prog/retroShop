@@ -403,7 +403,11 @@ public with sharing class cartControllerTest {
     @IsTest
     static void makeDataCreateUser(){
 
+        Map<String,String> attributeMap = new Map<String,String>();
+
         Auth.UserData data  = new Auth.UserData(null, null, null, null, null, null,null, null, null, null, null);
+
+        Auth.UserData data2  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
 
         Id portalId = null;
 
@@ -414,7 +418,7 @@ public with sharing class cartControllerTest {
 
         handler.createUser(portalId, data);
 
-       
+        handler.createUser(portalId, data2);
 
         Test.stopTest();
         
