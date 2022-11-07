@@ -81,7 +81,7 @@ public with sharing class DiscountManagerCalculatorController {
             return allResultsList;
 
         } catch (Exception e) {
-            System.debug(e);
+            System.debug(e.getStackTraceString());
             throw new AuraHandledException(e.getMessage());
         }
     }
@@ -111,6 +111,7 @@ public with sharing class DiscountManagerCalculatorController {
             return valueAfterDiscount;
             
         } catch (Exception e) {
+            System.debug(e.getMessage());
             throw new AuraHandledException(e.getMessage());
         }
     }

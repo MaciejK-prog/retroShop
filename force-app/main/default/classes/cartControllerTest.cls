@@ -268,6 +268,8 @@ public with sharing class cartControllerTest {
        
         DiscountManagerController.ProductWrapper wrapper  = new DiscountManagerController.ProductWrapper(productToWrap);
 
+        wrapper.setStandardPrice(30.00);
+
 
         List<DiscountManagerController.ProductWrapper> listOfWrappers  = new List<DiscountManagerController.ProductWrapper>{wrapper};
 
@@ -275,8 +277,8 @@ public with sharing class cartControllerTest {
 
         Test.startTest();
 
-        DiscountManagerCalculatorController.createNewEntries(serializedProduct, 20 , 'currency', 'Hot Deals', dateToTest, dateToTest);
-        DiscountManagerCalculatorController.createNewEntries(serializedProduct, 20 , 'precentage', 'Hot Deals', dateToTest, dateToTest);
+        DiscountManagerCalculatorController.createNewEntries(serializedProduct, 20 , 'currency', 'test', dateToTest, dateToTest);
+        DiscountManagerCalculatorController.createNewEntries(serializedProduct, 20 , 'precentage', 'test', dateToTest, dateToTest);
 
         Test.stopTest();
     }
