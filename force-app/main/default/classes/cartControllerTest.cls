@@ -292,6 +292,20 @@ public with sharing class cartControllerTest {
     }
 
     @IsTest
+    static void testMethodOrderData() {
+
+        cartController.OrderData controller = new cartController.OrderData();
+
+        Test.startTest();
+
+        controller.getOrder();
+
+        Test.stopTest();
+    }
+
+
+
+    @IsTest
     static void createCaseTest() {
 
         Product2 productTest = [SELECT Id 
