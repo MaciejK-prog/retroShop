@@ -20,6 +20,15 @@ public with sharing class cartControllerTest {
 
         insert productForTest;
 
+        Product2 productForTestFalse = new Product2();
+        productForTestFalse.Name = 'test2';
+        productForTestFalse.ProductCode = null;
+        productForTestFalse.Family =null;
+        productForTestFalse.Status__c =null;
+        productForTestFalse.IsActive = false;
+
+        insert productForTestFalse;
+
         Id pricebookId = Test.getStandardPricebookId();
 
 
@@ -60,6 +69,17 @@ public with sharing class cartControllerTest {
 
         insert orderForTest;
 
+        Order orderForTestFalse = new Order();
+        orderForTestFalse.Pricebook2Id = null;
+        orderForTestFalse.Name = 'test';
+        orderForTestFalse.AccountId = null;
+        orderForTestFalse.Status = null;
+        orderForTestFalse.EffectiveDate = Date.today();
+        orderForTestFalse.CurrencyIsoCode = null;
+
+
+        insert orderForTestFalse;
+
         Commentary__c commentToTest = new Commentary__c();
         commentToTest.Commentary__c = 'test';
         commentToTest.Name = 'test';
@@ -94,12 +114,16 @@ public with sharing class cartControllerTest {
     static void testMethodGetProducts(){
 
         Product2 productTotestMethod = [SELECT Id 
-                                      FROM Product2];
+                                      FROM Product2 WHERE Name = 'test'];
+
+        Product2 productTotestMethodFalse = [SELECT Id 
+                                       FROM Product2 WHERE Name = 'test2'];
 
         
         Test.startTest();
 
             cartController.getProducts(new List<String>{productToTestMethod.Id} );
+            cartController.getProducts(new List<String>{productTotestMethodFalse.Id} );
         
         Test.stopTest();
         
@@ -229,6 +253,7 @@ public with sharing class cartControllerTest {
 
         Test.stopTest();
     }
+
 
     @IsTest
     static void countDiscountCurrencyTest() {
