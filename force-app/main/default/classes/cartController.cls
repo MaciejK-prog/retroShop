@@ -15,6 +15,7 @@ public with sharing class cartController {
             productsInCart.add(productWrapper);
         }
 
+        System.debug('products in cart' + productsInCart);
 
         return productsInCart;
 
@@ -49,10 +50,14 @@ public with sharing class cartController {
     public static Case recieveCaseBody(Id caseId){
         try {
 
+
+            System.debug(caseId);
             
             Case caseToDisplay = [SELECT Subject, Description, Status
                                 FROM Case
-                                WHERE Id =: caseId ]
+                                WHERE Id =: caseId ];
+
+        System.debug(caseToDisplay);
 
         return caseToDisplay;
             
@@ -88,6 +93,8 @@ public with sharing class cartController {
     public static Case createACase(String subject, String reason, Id idOfProduct, Id idOfOrderItem){
         try {
 
+            System.debug(idOfProduct);
+
             Case caseToCreate = new Case(Subject = subject,
                                          Description = reason,
                                          ProductId = idOfProduct,
@@ -120,6 +127,7 @@ public with sharing class cartController {
             User loggedUser = [SELECT Id, Contact.AccountId
                                 FROM User 
                                 WHERE Id =: UserInfo.getUserId()];
+            System.debug(loggedUser.Contact.AccountId);
              
             return new Order(
                 AccountId = loggedUser.Contact.AccountId,
