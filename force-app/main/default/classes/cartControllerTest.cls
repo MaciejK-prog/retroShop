@@ -301,6 +301,22 @@ public with sharing class cartControllerTest {
 
     }
 
+    @IsTest
+    static void photoUploadControllerTest() {
+
+        Product2 productToTest = [SELECT Id
+        FROM Product2 WHERE Name='test'];
+
+        Id idofPhoto = (Id) '123456789012345';
+
+        test.startTest();
+
+        PhotoUploadController.addMainPhoto(productToTest.Id, idofPhoto);
+
+        Test.stopTest();
+
+    }
+
     
 
     @IsTest
