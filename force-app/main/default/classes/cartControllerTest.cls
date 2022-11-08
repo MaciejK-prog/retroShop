@@ -469,6 +469,7 @@ public with sharing class cartControllerTest {
 
         DiscountManagerCalculatorController.createNewEntries(serializedProduct, 20 , 'currency', 'test', dateToTest, dateToTest);
         DiscountManagerCalculatorController.createNewEntries(serializedProduct, 20 , 'precentage', 'test', dateToTest, dateToTest);
+        DiscountManagerCalculatorController.createNewEntries(serializedProduct, 200 , 'precentage', 'test', dateToTest, dateToTest);
 
         Test.stopTest();
     }
