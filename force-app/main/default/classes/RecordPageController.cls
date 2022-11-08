@@ -4,7 +4,7 @@ public with sharing class RecordPageController {
     public static ProductService.Product recieveRecordData(Id recordIdToDisplay) {
         try {
 
-            System.debug('ej jestem w recieve record');
+
 
             String wtf = UserInfo.getUserId();
 
@@ -20,9 +20,6 @@ public with sharing class RecordPageController {
                                                      FROM User
                                                      WHERE User.Id =: wtf ];
 
-                                                     System.debug(wtf);
-
-            System.debug(pricebookEntryOfProduct);
 
             pricebookEntryOfProduct.Product2.CurrencyIsoCode =  getUserContext.DefaultCurrencyIsoCode;
 
@@ -31,14 +28,14 @@ public with sharing class RecordPageController {
             ProductService.Product wrapperToDisplay = new ProductService.Product(pricebookEntryOfProduct);
 
 
-            System.debug(wrapperToDisplay);
+
 
 
 
             return wrapperToDisplay;
             
         } catch (Exception e) {
-            System.debug(e.getMessage());
+
             throw new AuraHandledException(e.getMessage());
         }
     }
@@ -62,13 +59,12 @@ public with sharing class RecordPageController {
     public static List<Auction__c> checkIfProductIsOnAuction(Id idOfProduct){
         try {
 
-            System.debug(idOfProduct);
+
 
         List <Auction__c> auctionToBeChecked = [SELECT End_Date__c, Start_Date__c, Start_Price__c, Status__c, UserId__c
                                                 FROM Auction__c
                                                 WHERE Product__c =: idOfProduct];
 
-        System.debug(auctionToBeChecked);
 
         return auctionToBeChecked;
 
@@ -92,7 +88,6 @@ public with sharing class RecordPageController {
                                                                   FROM PricebookEntry
                                                                   WHERE Product2Id =: idOfProduct AND Pricebook2.IsStandard = TRUE];
 
-            System.debug(pricebookEntryOfProductToPriceChange);
 
 
 

@@ -14,8 +14,6 @@ public with sharing class MainMenuController {
 
             List<PricebookEntry> pricebookEntriesToInitialize = new List<PricebookEntry>();
 
-            System.debug(getUserContext.DefaultCurrencyIsoCode);
-
 
             if( getUserContext.DefaultCurrencyIsoCode == 'USD') {
 
@@ -55,8 +53,6 @@ public with sharing class MainMenuController {
 
 
             Map<Id,ProductService.Product> product = new Map<Id, ProductService.Product> ();
-
-            System.debug(pricebookEntriesToInitialize);
 
             for(PricebookEntry entryToMap : pricebookEntriesToInitialize) {
 

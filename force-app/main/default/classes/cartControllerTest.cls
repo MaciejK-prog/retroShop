@@ -14,7 +14,7 @@ public with sharing class cartControllerTest {
         Product2 productForTest = new Product2();
         productForTest.Name = 'test';
         productForTest.ProductCode ='1234';
-        productForTest.Family ='test';
+        productForTest.Family ='Phone';
         productForTest.Status__c ='Normal';
         productForTest.IsActive = true;
 
@@ -24,7 +24,7 @@ public with sharing class cartControllerTest {
         Product2 productForTestBatch = new Product2();
         productForTestBatch.Name = 'test33';
         productForTestBatch.ProductCode ='1234';
-        productForTestBatch.Family ='test';
+        productForTestBatch.Family ='Accesories';
         productForTestBatch.Status__c ='Normal';
         productForTestBatch.IsActive = true;
 
@@ -33,7 +33,7 @@ public with sharing class cartControllerTest {
         Product2 productForTestFalse = new Product2();
         productForTestFalse.Name = 'test2';
         productForTestFalse.ProductCode = null;
-        productForTestFalse.Family =null;
+        productForTestFalse.Family ='Toy';
         productForTestFalse.Status__c =null;
         productForTestFalse.IsActive = false;
 
@@ -42,7 +42,7 @@ public with sharing class cartControllerTest {
         Product2 productForTestHotDeal = new Product2();
         productForTestHotDeal.Name = 'test3';
         productForTestHotDeal.ProductCode ='1234';
-        productForTestHotDeal.Family ='test';
+        productForTestHotDeal.Family ='Toy';
         productForTestHotDeal.Status__c ='Hot Deal';
         productForTestHotDeal.IsActive = true;
 
@@ -51,7 +51,7 @@ public with sharing class cartControllerTest {
         Product2 productForTestSale = new Product2();
         productForTestSale.Name = 'test4';
         productForTestSale.ProductCode ='1234';
-        productForTestSale.Family ='test';
+        productForTestSale.Family ='Console';
         productForTestSale.Status__c ='Sale';
         productForTestSale.IsActive = true;
 
@@ -247,14 +247,11 @@ public with sharing class cartControllerTest {
     static void testRecieveRecord() {
         Product2 productToTest = [SELECT Id
                                  FROM Product2 WHERE Name='test'];
-        
-        System.debug(productToTest);
 
         List<PricebookEntry> pricebookEntryOfProduct = [SELECT Id, CurrencyIsoCode, Product2.CurrencyIsoCode, UnitPrice, Product2Id, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
         FROM PricebookEntry
         WHERE PriceBook2.IsStandard = true];
 
-            System.debug(pricebookEntryOfProduct);
 
         Test.startTest();
 
@@ -277,8 +274,6 @@ public with sharing class cartControllerTest {
         LocaleSidKey='en_US', ProfileId = p.Id,
         TimeZoneSidKey='America/Los_Angeles', UserName='newuser@testorg.com');
 
-        System.debug(p);
-        System.debug(u2);
 
         Test.startTest();
 
