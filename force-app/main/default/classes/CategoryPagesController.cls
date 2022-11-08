@@ -11,6 +11,8 @@ public with sharing class CategoryPagesController {
 
             List<ProductService.Product> listOfConsoles = new List<ProductService.Product>();
 
+            
+
             for(PricebookEntry entries : pricebookEntries) {
                 ProductService.Product productToDisplay = new ProductService.Product(entries);
                 listOfConsoles.add(productToDisplay);
@@ -19,6 +21,7 @@ public with sharing class CategoryPagesController {
             return listOfConsoles;
             
         } catch (Exception e) {
+            System.debug(e.getMessage());
             throw new AuraHandledException(e.getMessage());
         }
     }

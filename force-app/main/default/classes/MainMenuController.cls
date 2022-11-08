@@ -27,18 +27,7 @@ public with sharing class MainMenuController {
                     pricebookEntriesToInitialize.add(pricebookEntriesToAdd);
                 }
 
-            } else if( getUserContext.DefaultCurrencyIsoCode == 'PLN') {
-                
-            List<PricebookEntry> pricebookEntries = [SELECT Id, UnitPrice, CurrencyIsoCode, Product2Id, Product2.Description, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
-                                                    FROM PricebookEntry
-                                                    WHERE Product2.Status__c = 'Hot Deal'
-                                                    AND (Pricebook2.Name = 'PLN Hot Deals Price Book' OR Pricebook2.IsStandard = TRUE)
-                                                    AND PricebookEntry.CurrencyIsoCode =: getUserContext.DefaultCurrencyIsoCode];
-
-                                                    for(PricebookEntry pricebookEntriesToAdd : pricebookEntries) {
-                                                        pricebookEntriesToInitialize.add(pricebookEntriesToAdd);
-                                                    }
-            } else {
+            }  else {
                 
             List<PricebookEntry> pricebookEntries = [SELECT Id, UnitPrice, CurrencyIsoCode, Product2Id, Product2.Description, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
                                                     FROM PricebookEntry
