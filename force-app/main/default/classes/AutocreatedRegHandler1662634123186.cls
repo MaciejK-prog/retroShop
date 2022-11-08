@@ -140,7 +140,7 @@ global class AutocreatedRegHandler1662634123186 implements Auth.RegistrationHand
 		 * 
 		 * @return User that has been initialized but not Saved
 		 **/ 
-		private User constructUser(Auth.UserData data, Profile p) {
+		public User constructUser(Auth.UserData data, Profile p) {
 			User u = new User();
 			u.username = data.email + '.retro-dev';
 			u.email = data.email;
