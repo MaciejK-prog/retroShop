@@ -319,14 +319,14 @@ public with sharing class cartControllerTest {
 
     @IsTest
     static void svaeOrderDetailsTest() {
-        Order orderToSerialize = [SELECT Id FROM Order];
+        Order orderToSerialize = [SELECT Id FROM Order LIMIT 1];
 
         String serializedOrder = JSON.serialize(orderToSerialize);
 
         Test.startTest();
         cartController.saveOrderDetails(serializedOrder);
         Test.stopTest();
-        
+
     }
 
     @IsTest
