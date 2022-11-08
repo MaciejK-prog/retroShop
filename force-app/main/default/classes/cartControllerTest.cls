@@ -301,21 +301,7 @@ public with sharing class cartControllerTest {
 
     }
 
-    @IsTest
-    static void photoUploadControllerTest() {
 
-        Product2 productToTest = [SELECT Id
-        FROM Product2 WHERE Name='test'];
-
-        Id idofPhoto = (Id) '123456789012345';
-
-        test.startTest();
-
-        PhotoUploadController.addMainPhoto(productToTest.Id, idofPhoto);
-
-        Test.stopTest();
-
-    }
 
     
 
@@ -329,6 +315,18 @@ public with sharing class cartControllerTest {
         cartController.recieveCaseBody(caseToTest.Id);
 
         Test.stopTest();
+    }
+
+    @IsTest
+    static void svaeOrderDetailsTest() {
+        Order orderToSerialize = [SELECT Id FROM Order];
+
+        String serializedOrder = JSON.serialize(orderToSerialize);
+
+        Test.startTest();
+        cartController.saveOrderDetails(serializedOrder);
+        Test.stopTest();
+        
     }
 
     @IsTest
@@ -371,6 +369,8 @@ public with sharing class cartControllerTest {
 
         Test.stopTest();
     }
+
+    
 
     @IsTest
     static void getToysTest() {
