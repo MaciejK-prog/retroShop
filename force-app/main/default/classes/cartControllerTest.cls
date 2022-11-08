@@ -16,6 +16,7 @@ public with sharing class cartControllerTest {
         productForTest.ProductCode ='1234';
         productForTest.Family ='Phone';
         productForTest.Status__c ='Normal';
+        Product2.Description = 'bbbbbb'
         productForTest.IsActive = true;
 
         insert productForTest;
@@ -26,6 +27,7 @@ public with sharing class cartControllerTest {
         productForTestBatch.ProductCode ='1234';
         productForTestBatch.Family ='Accesories';
         productForTestBatch.Status__c ='Normal';
+        Product2.Description = 'bbbbbb'
         productForTestBatch.IsActive = true;
 
         insert productForTestBatch;
@@ -34,6 +36,7 @@ public with sharing class cartControllerTest {
         productForTestFalse.Name = 'test2';
         productForTestFalse.ProductCode = null;
         productForTestFalse.Family ='Toy';
+        Product2.Description = 'bbbbbb'
         productForTestFalse.Status__c =null;
         productForTestFalse.IsActive = false;
 
@@ -44,6 +47,7 @@ public with sharing class cartControllerTest {
         productForTestHotDeal.ProductCode ='1234';
         productForTestHotDeal.Family ='Toy';
         productForTestHotDeal.Status__c ='Hot Deal';
+        Product2.Description = 'bbbbbb'
         productForTestHotDeal.IsActive = true;
 
         insert productForTestHotDeal;
@@ -53,6 +57,7 @@ public with sharing class cartControllerTest {
         productForTestSale.ProductCode ='1234';
         productForTestSale.Family ='Console';
         productForTestSale.Status__c ='Sale';
+        Product2.Description = 'bbbbbb'
         productForTestSale.IsActive = true;
 
         insert productForTestSale;
