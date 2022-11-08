@@ -601,6 +601,19 @@ public with sharing class cartControllerTest {
     }
 
     @IsTest
+    static void deletePhotoTest() {
+
+        Product2 productsToRecieve = [SELECT Id FROM Product2 WHERE Name='test'];
+
+        Test.startTest();
+
+        PhotoUploader.deletePhoto(productsToRecieve.Id, '123456789012345');
+
+        Test.stopTest();
+
+    }
+
+    @IsTest
     static void makeDatacanCreateUser(){
 
         Auth.UserData data  = new Auth.UserData(null, null, null, null, null, null,null, null, null, null, null);
