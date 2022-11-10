@@ -69,7 +69,10 @@ public with sharing class cartController {
     @AuraEnabled
     public static Id saveOrderDetails(String orderDetailJson){
         try {
+
             OrderDetail orderDetail = (cartController.OrderDetail) JSON.deserialize(orderDetailJson, OrderDetail.class);
+
+            System.debug(orderDetail);
 
             Pricebook2 pb = [SELECT Id FROM Pricebook2 WHERE IsStandard = TRUE];
             Order order = orderDetail.data.getOrder();

@@ -364,17 +364,17 @@ public with sharing class cartControllerTest {
         Test.stopTest();
     }
 
-    @IsTest
-    static void svaeOrderDetailsTest() {
-        Order orderToSerialize = [SELECT Id FROM Order LIMIT 1];
-
-        String serializedOrder = JSON.serialize(orderToSerialize);
-
-        Test.startTest();
-        cartController.saveOrderDetails(serializedOrder);
-        Test.stopTest();
-
-    }
+    //@IsTest
+    //static void svaeOrderDetailsTest() {
+    //    Order orderToSerialize = [SELECT Id FROM Order LIMIT 1];
+//
+    //    String serializedOrder = JSON.serialize(orderToSerialize);
+//
+    //    Test.startTest();
+    //    cartController.saveOrderDetails(serializedOrder);
+    //    Test.stopTest();
+//
+    //}
 
     @IsTest
     static void testMethodOrderData() {
@@ -686,51 +686,51 @@ public with sharing class cartControllerTest {
     }
 
 
-    @IsTest
-    static void makeDataCreateUser(){
+   // @IsTest
+   // static void makeDataCreateUser(){
+//
+   //     Map<String,String> attributeMap = new Map<String,String>();
+//
+   //     Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com','franek', 'janek', 'google', null, null, attributeMap);
+//
+   //     Auth.UserData data2  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
+//
+   //     Id portalId = null;
+//
+   //     AutocreatedRegHandler1662634123186 handler = new AutocreatedRegHandler1662634123186();
+//
+   //     
+   //     Test.startTest();
+//
+   //     handler.createUser(portalId, data);
+//
+   //     handler.createUser(portalId, data2);
+//
+   //     Test.stopTest();
+   //     
+   // }
 
-        Map<String,String> attributeMap = new Map<String,String>();
-
-        Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com','franek', 'janek', 'google', null, null, attributeMap);
-
-        Auth.UserData data2  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
-
-        Id portalId = null;
-
-        AutocreatedRegHandler1662634123186 handler = new AutocreatedRegHandler1662634123186();
-
-        
-        Test.startTest();
-
-        handler.createUser(portalId, data);
-
-        handler.createUser(portalId, data2);
-
-        Test.stopTest();
-        
-    }
-
-    @IsTest
-    static void makeCreateUser(){
-
-        Map<String,String> attributeMap = new Map<String,String>();
-
-        Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com','franek', 'janek', 'google', null, null, attributeMap);
-
-        Auth.UserData data2  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
-
-        Id portalId = null;
-
-        AutocreatedRegHandler1662634123186 handler = new AutocreatedRegHandler1662634123186();
-
-        
-        Test.startTest();
-
-        handler.CreatePersonAccount(data);
-
-        Test.stopTest();
-        
-    }
+    //@IsTest
+    //static void makeCreateUser(){
+//
+    //    Map<String,String> attributeMap = new Map<String,String>();
+//
+    //    Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com','franek', 'janek', 'google', null, null, attributeMap);
+//
+    //    Auth.UserData data2  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
+//
+    //    Id portalId = null;
+//
+    //    AutocreatedRegHandler1662634123186 handler = new AutocreatedRegHandler1662634123186();
+//
+    //    
+    //    Test.startTest();
+//
+    //    handler.CreatePersonAccount(data);
+//
+    //    Test.stopTest();
+    //    
+    //}
 
 
 
