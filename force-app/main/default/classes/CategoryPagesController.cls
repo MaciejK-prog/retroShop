@@ -5,11 +5,15 @@ public with sharing class CategoryPagesController {
     public static List<ProductService.Product> getConsoleCategoryProducts(){
         try {
 
-            List<PricebookEntry> pricebookEntries = [SELECT Id, UnitPrice, Product2Id, Product2.Description, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
+            List<PricebookEntry> pricebookEntries = [SELECT Id, CurrencyIsoCode, UnitPrice, Product2Id, Product2.Description, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
             FROM PricebookEntry
             WHERE Product2.Family = 'Console'];
 
+            System.debug(pricebookEntries);
+
             List<ProductService.Product> listOfConsoles = new List<ProductService.Product>();
+
+            System.debug(listOfConsoles);
 
             
 
@@ -17,6 +21,8 @@ public with sharing class CategoryPagesController {
                 ProductService.Product productToDisplay = new ProductService.Product(entries);
                 listOfConsoles.add(productToDisplay);
             }
+
+            System.debug('koniec');
 
             return listOfConsoles;
             
@@ -29,7 +35,7 @@ public with sharing class CategoryPagesController {
     public static List<ProductService.Product> getToysCategoryProducts(){
         try {
 
-            List<PricebookEntry> pricebookEntries = [SELECT Id, UnitPrice, Product2Id, Product2.Description, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
+            List<PricebookEntry> pricebookEntries = [SELECT Id, CurrencyIsoCode, UnitPrice, Product2Id, Product2.Description, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
             FROM PricebookEntry
             WHERE Product2.Family = 'Toy'];
 
@@ -50,7 +56,7 @@ public with sharing class CategoryPagesController {
     public static List<ProductService.Product> getAccesoriesCategoryProducts(){
         try {
 
-            List<PricebookEntry> pricebookEntries = [SELECT Id, UnitPrice, Product2Id, Product2.Description, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
+            List<PricebookEntry> pricebookEntries = [SELECT Id, CurrencyIsoCode, UnitPrice, Product2Id, Product2.Description, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
             FROM PricebookEntry
             WHERE Product2.Family = 'Accesories' OR Product2.Family = 'Jewelry'];
 
@@ -71,7 +77,7 @@ public with sharing class CategoryPagesController {
     public static List<ProductService.Product> getPhonesCategoryProducts(){
         try {
 
-            List<PricebookEntry> pricebookEntries = [SELECT Id, UnitPrice, Product2Id, Product2.Description, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
+            List<PricebookEntry> pricebookEntries = [SELECT Id, UnitPrice, CurrencyIsoCode, Product2Id, Product2.Description, Product2.Custom_Description__c, Product2.Main_Photo__c, Pricebook2.IsStandard, Product2.Name,Product2.Family, Product2.Status__c
             FROM PricebookEntry
             WHERE Product2.Family = 'Phone'];
 

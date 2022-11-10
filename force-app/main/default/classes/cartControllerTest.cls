@@ -90,6 +90,14 @@ public with sharing class cartControllerTest {
 
         insert productForTestSale;
 
+        Id pricebookId = Test.getStandardPricebookId();
+
+        Pricebook2 standardPricebook = new Pricebook2();
+        standardPricebook.Id = Test.getStandardPricebookId();
+        standardPricebook.IsActive = true;
+
+        update standardPricebook;
+
         
         Product2 productForTestSale3 = new Product2();
         productForTestSale3.Name = 'test41';
@@ -101,15 +109,15 @@ public with sharing class cartControllerTest {
 
         insert productForTestSale3;
 
-        
-
-        Id pricebookId = Test.getStandardPricebookId();
-
-        Pricebook2 standardPricebook = new Pricebook2();
-        standardPricebook.Id = Test.getStandardPricebookId();
-        standardPricebook.IsActive = true;
-
-        update standardPricebook;
+        PricebookEntry consoleForTest = new PricebookEntry();
+        consoleForTest.Product2Id = productForTestSale3.Id;
+        consoleForTest.Pricebook2Id = standardPricebook.Id;
+        consoleForTest.IsActive = true;
+        consoleForTest.CurrencyIsoCode = 'EUR';
+        consoleForTest.UnitPrice = 10.00;
+        consoleForTest.IsActive = true;
+    
+        insert consoleForTest;
 
 
         
