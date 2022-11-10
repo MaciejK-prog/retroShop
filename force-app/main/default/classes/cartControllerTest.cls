@@ -560,7 +560,7 @@ public with sharing class cartControllerTest {
 
         Test.startTest();
 
-        for(User usersToCheck : usersToCheck) {
+        for(User userToCheck : usersToCheck) {
 
         MainMenuController.searchSalesProducts();
 
