@@ -697,7 +697,7 @@ public with sharing class cartControllerTest {
        
        Test.startTest();
        handler.createUser(portalId, data);
-       handler.createUser(portalId, data2);
+
        Test.stopTest();
        
    }
@@ -719,24 +719,13 @@ public with sharing class cartControllerTest {
     static void makeDataUpdateUser(){
 
         Map<String,String> attributeMap = new Map<String,String>();
-
-
         Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
-        
-        
         Id portalId = null;
-
         Id userId = UserInfo.getUserId();
-
         AutocreatedRegHandler1662634123186 handler = new AutocreatedRegHandler1662634123186();
-        
-
-        
+    
         Test.startTest();
-
         handler.updateUser(userId, portalId, data);
- 
-
         Test.stopTest();
         
     }
@@ -790,14 +779,9 @@ public with sharing class cartControllerTest {
     @IsTest
     static void batchScheduleTest() {
 
-        
-
         Test.startTest();
-
-       batchScheduler.scheduler();
-        
+        batchScheduler.scheduler();
         Test.stopTest();
-
 
     }
 
@@ -807,12 +791,8 @@ public with sharing class cartControllerTest {
 
         Product2 productToTest = [SELECT Id, Name, Family, ProductCode, Description  FROM Product2 WHERE Name ='test'];
 
-        
-
         Test.startTest();
-
-       DiscountManagerController.ProductWrapper wrapper  = new DiscountManagerController.ProductWrapper(productToTest);
-        
+        DiscountManagerController.ProductWrapper wrapper  = new DiscountManagerController.ProductWrapper(productToTest);
         Test.stopTest();
 
 

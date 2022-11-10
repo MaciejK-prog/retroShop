@@ -9,7 +9,7 @@ global class AutocreatedRegHandler1662634123186 implements Auth.RegistrationHand
 		
 		private static final String DEFAULT_ACCOUNTNAME = 'Customer Community User';
 		private static final String EXTERNAL_USER_PROFILE = 'Customer Community User';
-		private static final String INTERNAL_USER_PROFILE = 'Customer Community User';  
+		private static final String INTERNAL_USER_PROFILE = 'System Administrator';  
 		private static final Id PERSON_ACCOUNT_RECORDTYPE = schema.Account.SobjectType.getDescribe().getRecordTypeInfosByDeveloperName().get('PersonAccount').getRecordTypeId();
 		private static final String TZSID = [SELECT timezonesidkey from User where profile.name = 'System Administrator' LIMIT 1].timezonesidkey;
 		
