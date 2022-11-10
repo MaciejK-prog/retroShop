@@ -671,6 +671,28 @@ public with sharing class cartControllerTest {
         
     }
 
+    @IsTest
+    static void makeCreateUser(){
+
+        Map<String,String> attributeMap = new Map<String,String>();
+
+        Auth.UserData data  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com','franek', 'janek', 'google', null, null, attributeMap);
+
+        Auth.UserData data2  = new Auth.UserData(null, 'test', 'test', 'test test', 'test@test.com', null,null, null, null, null, attributeMap);
+
+        Id portalId = null;
+
+        AutocreatedRegHandler1662634123186 handler = new AutocreatedRegHandler1662634123186();
+
+        
+        Test.startTest();
+
+        handler.CreatePersonAccount(data);
+
+        Test.stopTest();
+        
+    }
+
 
 
     @IsTest

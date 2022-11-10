@@ -117,7 +117,7 @@ global class AutocreatedRegHandler1662634123186 implements Auth.RegistrationHand
 		 * 
 		 * @param data 
 		 **/
-		private Id createPersonAccount(Auth.UserData data){
+		public Id createPersonAccount(Auth.UserData data){
 			Account account = new Account();
 			account.LastName = data.lastName;
 			account.FirstName = data.firstName;
