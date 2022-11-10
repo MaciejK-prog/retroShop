@@ -22,6 +22,14 @@ public with sharing class cartControllerTest {
         insert productForTest;
 
 
+        ContentVersion testPhoto = new Contentversion();
+        testPhoto.title='test';
+        testPhoto.PathOnClient ='test';
+        Blob b=Blob.valueOf('Unit Test Attachment Body');
+        testPhoto.versiondata=EncodingUtil.base64Decode('Unit Test Attachment Body');
+        insert testPhoto;
+
+
         Product2 productForTestBatch = new Product2();
         productForTestBatch.Name = 'test33';
         productForTestBatch.ProductCode ='1234';
@@ -603,11 +611,13 @@ public with sharing class cartControllerTest {
     @IsTest
     static void deletePhotoTest() {
 
+        ContentVersion contentToFind = [SELECT Id FROM ContentVersion WHERE title = 'test'];
+
         Product2 productsToRecieve = [SELECT Id FROM Product2 WHERE Name='test'];
 
         Test.startTest();
 
-        PhotoUploader.deletePhoto(productsToRecieve.Id, '123456789012345');
+        PhotoUploader.deletePhoto(productsToRecieve.Id, contentToFind.Id);
 
         Test.stopTest();
 
