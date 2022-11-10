@@ -40,13 +40,23 @@ public with sharing class cartControllerTest {
 
         insert productForTestBatch;
 
+        Product2 productForTestBatch2 = new Product2();
+        productForTestBatch2.Name = 'test331';
+        productForTestBatch2.ProductCode ='1234';
+        productForTestBatch2.Family ='Accesories';
+        productForTestBatch2.Status__c ='Normal';
+        productForTestBatch2.Description = 'bbbbbb';
+        productForTestBatch2.IsActive = true;
+
+        insert productForTestBatch2;
+
         Product2 productForTestFalse = new Product2();
         productForTestFalse.Name = 'test2';
         productForTestFalse.ProductCode = null;
         productForTestFalse.Family ='Toy';
         productForTestFalse.Description = 'bbbbbb';
         productForTestFalse.Status__c =null;
-        productForTestFalse.IsActive = false;
+        productForTestFalse.IsActive = true;
 
         insert productForTestFalse;
 
@@ -60,6 +70,16 @@ public with sharing class cartControllerTest {
 
         insert productForTestHotDeal;
 
+        Product2 productForTestHotDeal2 = new Product2();
+        productForTestHotDeal2.Name = 'test20';
+        productForTestHotDeal2.ProductCode ='1234';
+        productForTestHotDeal2.Family ='Toy';
+        productForTestHotDeal2.Status__c ='Hot Deal';
+        productForTestHotDeal2.Description = 'bbbbbb';
+        productForTestHotDeal2.IsActive = true;
+
+        insert productForTestHotDeal2;
+
         Product2 productForTestSale = new Product2();
         productForTestSale.Name = 'test4';
         productForTestSale.ProductCode ='1234';
@@ -69,6 +89,17 @@ public with sharing class cartControllerTest {
         productForTestSale.IsActive = true;
 
         insert productForTestSale;
+
+        
+        Product2 productForTestSale3 = new Product2();
+        productForTestSale3.Name = 'test41';
+        productForTestSale3.ProductCode ='1234';
+        productForTestSale3.Family ='Console';
+        productForTestSale3.Status__c ='Sale';
+        productForTestSale3.Description = 'bbbbbb';
+        productForTestSale3.IsActive = true;
+
+        insert productForTestSale3;
 
         
 
