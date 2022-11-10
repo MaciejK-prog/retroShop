@@ -1,0 +1,32 @@
+<template>
+
+    <img class="hotDealsImage" src={hotDealsUrl}>
+
+    <div class="mainContainer">
+    <template for:each={products} for:item="product">
+            <div key={product.id} data-id={product.id} onclick={redirectToRecordPage} class="productDiv">
+            <img src={product.mainPhotoUrl} data-id={product.id} onclick={redirectToRecordPage} class="displayedImage"/>
+            <h1 class="productName">{product.name}</h1>
+            <h1 class="productPrice">{product.priceString}</h1>
+            <h1 class="productPriceDiscounted">{product.discountString}</h1>
+            </div>
+    </template>
+</div>
+<br/>
+
+<img class="saleImage" src={saleUrl} />
+
+<div class="mainContainer">
+    <template for:each={sales} for:item="sale">
+            <div key={sale.id} data-id={sale.id} class="productDiv" onclick={redirectToRecordPage}>
+            <img src={sale.mainPhotoUrl} data-id={sale.id} class="displayedImage"/>
+            <h1 class="productName">{sale.name}</h1>
+            <h1 class="productPrice">{sale.priceString}</h1>
+            <h1 class="productPriceDiscounted">{sale.discountString}</h1>
+            </div>
+    </template>
+</div>
+
+
+</template>
+

@@ -10,3 +10,6 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+force-app\main\default\sites
+force-app\main\default\experiences
+force-app\main\default\networks

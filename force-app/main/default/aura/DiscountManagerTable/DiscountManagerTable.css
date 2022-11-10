@@ -1,0 +1,15 @@
+.THIS {
+    height: 100vh;
+}
+
+.THIS .slds-is-selected  {
+    color: black;
+}
+
+.THIS .slds-icon-utility-error svg {
+    fill: red;
+}
+
+.THIS .slds-icon-utility-check svg {
+    fill: green;
+}

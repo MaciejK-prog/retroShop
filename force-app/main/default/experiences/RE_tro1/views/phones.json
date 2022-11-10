@@ -1,0 +1,45 @@
+{
+  "appPageId" : "4d88935c-c4f1-4df5-9021-96bed4f744da",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "fc5d40c6-d87e-41ec-9698-b3a3a8a3832c",
+  "label" : "phones",
+  "regions" : [ {
+    "id" : "286d8706-b4af-41a0-8cc2-984a51e7b1f6",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:phonePageDisplay",
+      "id" : "49444319-04f8-4e25-b49b-a041efff9cd0",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b84da509-d65d-49a3-ab50-df2a6e26702a",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "3dace410-c5a4-4cc3-ae1b-ffb9b238ca88",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "phones"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "c94e52b3-6241-4a7e-b88c-c3514b7e7619",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "184a5c3e-2a36-4ffc-bab1-d8dd92eac258",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-phones"
+}

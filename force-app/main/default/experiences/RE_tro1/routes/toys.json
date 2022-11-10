@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "1e0c3923-5ff0-4a75-805f-8676474aed96",
+  "appPageId" : "4d88935c-c4f1-4df5-9021-96bed4f744da",
+  "configurationTags" : [ ],
+  "id" : "af804e1d-594c-42d8-8039-ebce24ba271f",
+  "label" : "toys",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-toys",
+  "type" : "route",
+  "urlPrefix" : "toys"
+}

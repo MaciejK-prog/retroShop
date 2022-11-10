@@ -1,0 +1,50 @@
+<template>
+    <div if:true={product} class="description">
+        
+        <div if:false={hideOthers}>
+        <div if:false={isThereAnAuction}>
+        <h1 class="productName">{product.name}</h1>
+        <h1 class="productPrice">{product.updatedPrice}</h1>
+        <button class="slds-button slds-button_neutral buyButton" onclick={addToCart}>Buy now!</button>
+        <lightning-formatted-rich-text
+        value={richtext}
+    ></lightning-formatted-rich-text>
+        <h1 class="productDescription"><lightning-formatted-rich-text
+            value={product.description}
+        ></lightning-formatted-rich-text></h1>
+        </div>
+    </div>
+   
+
+        <div if:false={hideOthers}>
+        <div if:true={isThereAnAuction}>
+        <h1 class="productName">{product.name}</h1>
+        <h1 class="productPrice">{product.updatedPrice}</h1>
+        <div class="slds-form-element__control">
+            <input type="number" onchange={handleAuctionPriceChange} class="slds-input" />
+          </div>
+        <button class="slds-button slds-button_neutral buyButton" onclick={placeYourBid}>Bid!</button>
+        <lightning-formatted-rich-text
+        value={richtext}
+    ></lightning-formatted-rich-text>
+        <h1 class="productDescription"><lightning-formatted-rich-text
+            value={product.description}
+        ></lightning-formatted-rich-text></h1>
+        </div>
+    </div>
+
+        <div if:true={inactiveAuction}>
+            <h1 class="productName">{product.name}</h1>
+            <h1 class="productPrice">{product.updatedPrice}</h1>
+            <h1 if:false={userWhichWonAuction} class="productPrice">Auction closed!</h1>
+            <button if:true={userWhichWonAuction} class="slds-button slds-button_neutral buyButton" onclick={addToCart}>You've won!</button>
+            <lightning-formatted-rich-text
+            value={richtext}
+        ></lightning-formatted-rich-text>
+            <h1 class="productDescription"><lightning-formatted-rich-text
+                value={product.description}
+            ></lightning-formatted-rich-text></h1>
+            </div>
+</div>
+    
+</template>

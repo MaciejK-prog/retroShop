@@ -1,0 +1,8 @@
+<aura:event type="COMPONENT" description="Event template">
+    <aura:attribute name="discount" type="Double" />
+    <aura:attribute name="pricebookType" type="String"/>
+    <aura:attribute name="discountType" Type="String"/>
+    <aura:attribute name="discountStartDate" Type="DateTime"/>
+    <aura:attribute name="discountEndDate" Type="DateTime"/>
+
+</aura:event>

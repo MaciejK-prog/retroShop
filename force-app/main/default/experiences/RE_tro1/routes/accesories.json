@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "acff36d7-6a96-400b-a13b-1d3285fef63a",
+  "appPageId" : "4d88935c-c4f1-4df5-9021-96bed4f744da",
+  "configurationTags" : [ ],
+  "id" : "159bf1a3-410f-4d67-aade-8e5442b1703c",
+  "label" : "accesories",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-accesories",
+  "type" : "route",
+  "urlPrefix" : "accesories"
+}

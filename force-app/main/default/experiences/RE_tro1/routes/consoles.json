@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "8fc5e90d-7c6d-4f1b-8ec0-85b51e0f295b",
+  "appPageId" : "4d88935c-c4f1-4df5-9021-96bed4f744da",
+  "configurationTags" : [ ],
+  "id" : "eadb9fe4-7cca-4999-8848-b04998c5d688",
+  "label" : "consoles",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-consoles",
+  "type" : "route",
+  "urlPrefix" : "consoles"
+}
