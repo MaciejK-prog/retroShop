@@ -556,9 +556,15 @@ public with sharing class cartControllerTest {
     @IsTest
     static void searchSalesProductsTest() {
 
+        List<User> usersToCheck = [SELECT Id FROM User];
+
         Test.startTest();
 
+        for(User usersToCheck : usersToCheck) {
+
         MainMenuController.searchSalesProducts();
+
+        }
 
         Test.stopTest();
     }
